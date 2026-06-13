@@ -254,6 +254,12 @@
   .spell h4 { font-family: var(--serif); font-weight: 500; font-size: 18px; margin-bottom: 3px; }
   .spell .gloss { font-style: italic; font-family: var(--serif); font-size: 13.5px; color: var(--gold); margin-bottom: 10px; }
   .spell p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .magic-cluster { margin: 3.5vh 0; }
+  .cluster-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--gold-faint); padding-bottom: 9px; margin-bottom: 18px; }
+  .cluster-head .ck { font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--gold); }
+  .cluster-head h4 { font-family: var(--serif); font-weight: 500; font-size: 21px; }
+  .cluster-head .cgloss { font-style: italic; font-size: 13.5px; color: var(--ink-soft); }
+  .magic-cluster .magic-grid { grid-template-columns: repeat(4, 1fr); margin: 0; }
   .compose { display: flex; flex-direction: column; gap: 12px; margin-top: 5vh; }
   .compose-row {
     display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
@@ -346,6 +352,7 @@
     text-align: center; color: var(--ink); padding: 20px 0; border-bottom: 1px solid var(--gold-faint);
   }
   .finding::before { content: "— "; color: var(--gold); }
+  .finding .fnote { display: block; font-family: var(--sans); font-style: normal; font-size: 14px; line-height: 1.55; color: var(--ink-soft); max-width: 540px; margin: 12px auto 0; letter-spacing: 0; }
 
   /* ——— Ch X: layers + close ——— */
   .layers { display: flex; flex-direction: column; gap: 14px; margin: 6vh auto; max-width: 680px; }
@@ -369,6 +376,7 @@
   /* ——— Responsive ——— */
   @media (max-width: 880px) {
     .magic-grid { grid-template-columns: repeat(2, 1fr); }
+    .magic-cluster .magic-grid { grid-template-columns: repeat(2, 1fr); }
     .arche-grid { grid-template-columns: 1fr; }
     .problems { grid-template-columns: repeat(2, 1fr); }
     .pairs { grid-template-columns: 1fr; }
@@ -454,7 +462,7 @@
     <h2 class="reveal">Agents are neither tool nor person.</h2>
     <p class="lede reveal">A tool waits. You pick up a hammer, use it, put it down. A spreadsheet doesn't think about you between sessions.</p>
     <p class="reveal">Agents don't wait. They <strong>remember</strong>. They <strong>communicate</strong>. They <strong>act</strong>, <strong>delegate</strong>, <strong>specialize</strong>, and <strong>persist through time</strong>. They exist somewhere between tool and person — which is exactly why the metaphors keep slipping. Employee. Assistant. Copilot. Digital coworker. Each one borrows a model built for people, and each one breaks somewhere important.</p>
-    <p class="reveal">We're not short on metaphors. We're short on an <strong>ontology</strong>: an existing model of semi-autonomous actors with different powers, different responsibilities, and different degrees of free will.</p>
+    <p class="reveal">We have no shortage of metaphors. What we lack is an <strong>ontology</strong>: an existing model of semi-autonomous actors with different powers, different responsibilities, and different degrees of free will.</p>
   </div>
 </section>
 
@@ -463,7 +471,7 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter III</div>
     <h2 class="reveal">It turns out we have one. It's just very old.</h2>
-    <p class="lede reveal">Greek, Norse, Hindu, Egyptian, Yoruba, Maya, Chinese, Aboriginal Australian, Abrahamic — traditions on every continent spent millennia reasoning about societies of beings with varying powers and varying independence. Within those stories sits a working theory of:</p>
+    <p class="lede reveal">Greek, Norse, Hindu, Egyptian, Yoruba, Maya, Chinese, Aboriginal Australian, Abrahamic — traditions on every continent spent millennia reasoning about societies of beings with varying powers and varying independence. Set them side by side and the same handful of concerns keeps surfacing:</p>
   </div>
   <div class="wrap">
     <div class="problems">
@@ -478,21 +486,36 @@
     </div>
   </div>
   <div class="col prose">
-    <p class="reveal">The record runs deep. The oldest myths we can still read — pressed into Sumerian clay — are more than four thousand years old, and researchers have argued that some Aboriginal Australian oral traditions describe coastline changes from the end of the last ice age, seven thousand years back or more. Every problem on this list has been worked on for a very long time — and every one of them is a live question in agent design today.</p>
+    <p class="reveal">The record runs deep. The oldest myths we can still read — pressed into Sumerian clay — are more than four thousand years old, and researchers have argued that some Aboriginal Australian oral traditions describe coastline changes from the end of the last ice age, seven thousand years back or more. Each of these has been turned over for a very long time — and each is a live question in agent design today.</p>
   </div>
-  <blockquote class="pullquote reveal">Mythology wasn't merely storytelling. It may be one of humanity's oldest frameworks for reasoning about distributed autonomous intelligence.</blockquote>
+  <blockquote class="pullquote reveal">Across four thousand years, myth has been one of the most enduring ways humans reason about intelligences beyond our own — what they can do, how freely they act, and what we dare to grant them.</blockquote>
 </section>
 
-<!-- ———————————————— IV · CHAIN OF AGENCY ———————————————— -->
-<section data-chapter="IV · The Chain of Agency" style="padding:15vh 28px 2vh">
+<!-- ———————————————— IV · FOUR LAYERS ———————————————— -->
+<section data-chapter="IV · Four Layers, One Language">
   <div class="col prose">
     <div class="eyebrow reveal">Chapter IV</div>
-    <h2 class="reveal">First, the who's who. Created beings come with different levels of independence.</h2>
+    <h2 class="reveal">The framework has four layers.</h2>
+    <p class="lede reveal">Everything that follows hangs on four questions. The rest of this page takes them one at a time — who can exist, what they can do, and the rules that hold them together.</p>
+  </div>
+  <div class="layers">
+    <div class="layer reveal"><h4>Cosmology</h4><p><b>Why does this system exist?</b> The mission. The human intent.</p></div>
+    <div class="layer reveal d1"><h4>Pantheon</h4><p><b>Who exists?</b> The cast of beings, each with its own rank and degree of autonomy.</p></div>
+    <div class="layer reveal d2"><h4>Magic</h4><p><b>What powers exist?</b> The capabilities a being can be granted — sight, memory, creation, movement, influence, time, dominion.</p></div>
+    <div class="layer reveal d3"><h4>Governance</h4><p><b>What are the rules?</b> Permissions, escalation, trust, creation rights — the layer where most agent frameworks fall apart.</p></div>
+  </div>
+</section>
+
+<!-- ———————————————— V · CHAIN OF AGENCY ———————————————— -->
+<section data-chapter="V · The Chain of Agency" style="padding:15vh 28px 2vh">
+  <div class="col prose">
+    <div class="eyebrow reveal">Chapter V</div>
+    <h2 class="reveal">First, the who's who. Supernatural beings come with different levels of independence.</h2>
     <p class="lede reveal">The old stories knew this; so do agents. Mythology gives us a ladder — five rungs, from a being that only obeys to a being that only governs. Keep scrolling to climb it.</p>
   </div>
 </section>
 
-<section id="chain-scroll" data-chapter="IV · The Chain of Agency">
+<section id="chain-scroll" data-chapter="V · The Chain of Agency">
   <div id="chain-sticky">
     <div class="chain-grid">
       <div class="chain-rail">
@@ -748,7 +771,7 @@
           <div class="kicker">Third rung</div>
           <h3>The Angel</h3>
           <div class="epithet">Independent, within a domain.</div>
-          <p>It operates continuously and acts on its own — but only inside a defined jurisdiction. The constraint isn't a limitation; it's the design.</p>
+          <p>It operates continuously and acts on its own, but only inside a defined jurisdiction — and that boundary is the whole point. The jurisdiction is what makes the autonomy safe to grant.</p>
           <div class="refs">
             <div class="ref lore"><span class="tag">In the stories</span>Gabriel, the announcing messenger of Abrahamic tradition, and the guardian angel — each with standing duties inside one defined jurisdiction.</div>
             <div class="ref today"><span class="tag">Today</span>An inbox triage agent, a research monitor, a calendar manager — always on, and never off its patch.</div>
@@ -891,25 +914,38 @@
   <div class="bigq reveal">That's the <span class="mark">who.</span> Now — what can these beings actually <span class="mark">do?</span></div>
 </section>
 
-<!-- ———————————————— V · SCHOOLS OF MAGIC ———————————————— -->
-<section data-chapter="V · The Schools of Magic">
+<!-- ———————————————— VI · SCHOOLS OF MAGIC ———————————————— -->
+<section data-chapter="VI · The Schools of Magic">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter V</div>
+    <div class="eyebrow reveal">Chapter VI</div>
     <h2 class="reveal">Rank and power are separate ledgers.</h2>
-    <p class="lede reveal">The ladder tells you how freely a being acts. It says nothing about what the being can act <em>on</em> — a golem can be strong, an angel can be blind. For that, the old traditions kept a second system: schools of magic. They map onto agent capabilities with almost no force-fitting, and each one names a power you might — or might not — grant.</p>
+    <p class="lede reveal">The ladder tells you how freely a being acts. It says nothing about what the being can act <em>on</em> — a golem can be strong, an angel can be blind. For that, the old traditions kept a second system: schools of magic. They map onto agent capabilities with almost no force-fitting, and each one names a power you might — or might not — grant. They sort into three families: what a being can <em>perceive</em>, what it can <em>create</em>, and what it can <em>command</em>.</p>
   </div>
   <div class="wrap">
-    <div class="magic-grid">
-      <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 Q16 7 29 17 Q16 27 3 17 Z"/><circle cx="16" cy="17" r="4.4"/><circle cx="16" cy="17" r="1.3" fill="currentColor" stroke="none"/><path d="M16 5v3M6.5 8l2 2.3M25.5 8l-2 2.3" stroke-width="1.3"/></svg><h4>Divination</h4><div class="gloss">seeing what's coming</div><p>Search, monitoring, prediction, trend detection.</p></div>
-      <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 13.5 a7 7 0 1 1 14 0 c0 3 -1.6 4.6 -2.6 5.6 v3.4 h-8.8 v-3.4 C10.6 18.1 9 16.5 9 13.5 Z"/><circle cx="13" cy="13.5" r="1.7"/><circle cx="19" cy="13.5" r="1.7"/><path d="M14.4 22.5v2.4M17.6 22.5v2.4" stroke-width="1.3"/></svg><h4>Necromancy</h4><div class="gloss">raising what was known</div><p>Memory, retrieval, knowledge bases. RAG raises the dead.</p></div>
-      <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 5h7M14 5v7L8.5 22.5a3 3 0 0 0 2.8 4h9.4a3 3 0 0 0 2.8-4L18 12V5"/><path d="M11 19.5h10" stroke-width="1.3"/><path d="M13 23h2M17 24h2" stroke-width="1.1"/></svg><h4>Transmutation</h4><div class="gloss">changing form</div><p>Summarizing, translating, categorizing, synthesis.</p></div>
-      <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l1.7 4 4.3 1.5-4.3 1.5L16 15l-1.7-4L10 9.5l4.3-1.5Z"/><path d="M7 23a9 4.5 0 0 0 18 0" /><path d="M9 19.5l-1.5-1.5M23 19.5l1.5-1.5" stroke-width="1.3"/></svg><h4>Conjuration</h4><div class="gloss">making from nothing</div><p>Documents, decks, prototypes, code.</p></div>
-      <div class="spell reveal d4"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7 q8 -4 16 0 v7 q0 8.5 -8 11 q-8 -2.5 -8 -11 Z"/><path d="M12 14 q2 -1.6 4 0M18 14 q2 -1.6 4 0" stroke-width="1.3"/><path d="M13 19.5 q3 2.4 6 0" stroke-width="1.3"/></svg><h4>Illusion</h4><div class="gloss">shaping appearance</div><p>Interface generation, visualization, rendering.</p></div>
-      <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 26 C8.5 20.5 6.5 15.5 9.8 12.4 a4.5 4.5 0 0 1 6.2.4 a4.5 4.5 0 0 1 6.2-.4 C25.5 15.5 23.5 20.5 16 26 Z"/><path d="M16 14.5 a2.2 2.2 0 1 1 -2.2 2.2" stroke-width="1.3"/></svg><h4>Enchantment</h4><div class="gloss">shaping minds</div><p>Personalization, recommendation, persuasion.</p></div>
-      <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 27 v-11 a9 9 0 0 1 18 0 v11"/><path d="M11 19 h9.5M17 15.5 L20.5 19 17 22.5" stroke-width="1.5"/></svg><h4>Teleportation</h4><div class="gloss">moving across space</div><p>Routing, integrations, sending things where they belong.</p></div>
-      <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5h12M10 27h12"/><path d="M11 5 c0 6.5 4 7.5 5 10.5 c1 -3 5 -4 5 -10.5M11 27 c0 -6.5 4 -7.5 5 -10.5 c1 3 5 4 5 10.5"/><path d="M14 24h4" stroke-width="1.2"/></svg><h4>Chronomancy</h4><div class="gloss">commanding time</div><p>Scheduling, prioritizing, forecasting, planning.</p></div>
-      <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="16" cy="24" rx="9.5" ry="3.2"/><path d="M16 20 v-7M12.8 16l3.2-3.2L19.2 16" stroke-width="1.5"/><path d="M16 7.5 q1.8 2.6 0 5 q-1.8 -2.4 0 -5Z" stroke-width="1.3"/></svg><h4>Summoning</h4><div class="gloss">calling new beings</div><p>Creating agents. The power that makes all the others recursive.</p></div>
-      <div class="spell reveal d4"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 23 V11.5 l5.2 4.2L16 8.5l3.8 7.2L25 11.5V23 Z"/><path d="M7 26h18" stroke-width="1.4"/><circle cx="16" cy="18.5" r="1.2" fill="currentColor" stroke="none"/></svg><h4>Dominion</h4><div class="gloss">governing the rest</div><p>Decision rights, allocation, escalation. The highest-order power.</p></div>
+    <div class="magic-cluster reveal">
+      <div class="cluster-head"><span class="ck">Family I</span><h4>Perceive</h4><span class="cgloss">knowing what is, and what's coming</span></div>
+      <div class="magic-grid">
+        <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 Q16 7 29 17 Q16 27 3 17 Z"/><circle cx="16" cy="17" r="4.4"/><circle cx="16" cy="17" r="1.3" fill="currentColor" stroke="none"/><path d="M16 5v3M6.5 8l2 2.3M25.5 8l-2 2.3" stroke-width="1.3"/></svg><h4>Divination</h4><div class="gloss">seeing what's coming</div><p>Search, monitoring, prediction, trend detection.</p></div>
+        <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 13.5 a7 7 0 1 1 14 0 c0 3 -1.6 4.6 -2.6 5.6 v3.4 h-8.8 v-3.4 C10.6 18.1 9 16.5 9 13.5 Z"/><circle cx="13" cy="13.5" r="1.7"/><circle cx="19" cy="13.5" r="1.7"/><path d="M14.4 22.5v2.4M17.6 22.5v2.4" stroke-width="1.3"/></svg><h4>Necromancy</h4><div class="gloss">raising what was known</div><p>Memory, retrieval, knowledge bases. RAG raises the dead.</p></div>
+      </div>
+    </div>
+    <div class="magic-cluster reveal">
+      <div class="cluster-head"><span class="ck">Family II</span><h4>Create</h4><span class="cgloss">making, changing, and shaping</span></div>
+      <div class="magic-grid">
+        <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 5h7M14 5v7L8.5 22.5a3 3 0 0 0 2.8 4h9.4a3 3 0 0 0 2.8-4L18 12V5"/><path d="M11 19.5h10" stroke-width="1.3"/><path d="M13 23h2M17 24h2" stroke-width="1.1"/></svg><h4>Transmutation</h4><div class="gloss">changing form</div><p>Summarizing, translating, categorizing, synthesis.</p></div>
+        <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l1.7 4 4.3 1.5-4.3 1.5L16 15l-1.7-4L10 9.5l4.3-1.5Z"/><path d="M7 23a9 4.5 0 0 0 18 0" /><path d="M9 19.5l-1.5-1.5M23 19.5l1.5-1.5" stroke-width="1.3"/></svg><h4>Conjuration</h4><div class="gloss">making from nothing</div><p>Documents, decks, prototypes, code.</p></div>
+        <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7 q8 -4 16 0 v7 q0 8.5 -8 11 q-8 -2.5 -8 -11 Z"/><path d="M12 14 q2 -1.6 4 0M18 14 q2 -1.6 4 0" stroke-width="1.3"/><path d="M13 19.5 q3 2.4 6 0" stroke-width="1.3"/></svg><h4>Illusion</h4><div class="gloss">shaping appearance</div><p>Interface generation, visualization, rendering.</p></div>
+        <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 26 C8.5 20.5 6.5 15.5 9.8 12.4 a4.5 4.5 0 0 1 6.2.4 a4.5 4.5 0 0 1 6.2-.4 C25.5 15.5 23.5 20.5 16 26 Z"/><path d="M16 14.5 a2.2 2.2 0 1 1 -2.2 2.2" stroke-width="1.3"/></svg><h4>Enchantment</h4><div class="gloss">shaping minds</div><p>Personalization, recommendation, persuasion.</p></div>
+      </div>
+    </div>
+    <div class="magic-cluster reveal">
+      <div class="cluster-head"><span class="ck">Family III</span><h4>Command</h4><span class="cgloss">reach, timing, and authority</span></div>
+      <div class="magic-grid">
+        <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 27 v-11 a9 9 0 0 1 18 0 v11"/><path d="M11 19 h9.5M17 15.5 L20.5 19 17 22.5" stroke-width="1.5"/></svg><h4>Teleportation</h4><div class="gloss">moving across space</div><p>Routing, integrations, sending things where they belong.</p></div>
+        <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5h12M10 27h12"/><path d="M11 5 c0 6.5 4 7.5 5 10.5 c1 -3 5 -4 5 -10.5M11 27 c0 -6.5 4 -7.5 5 -10.5 c1 3 5 4 5 10.5"/><path d="M14 24h4" stroke-width="1.2"/></svg><h4>Chronomancy</h4><div class="gloss">commanding time</div><p>Scheduling, prioritizing, forecasting, planning.</p></div>
+        <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="16" cy="24" rx="9.5" ry="3.2"/><path d="M16 20 v-7M12.8 16l3.2-3.2L19.2 16" stroke-width="1.5"/><path d="M16 7.5 q1.8 2.6 0 5 q-1.8 -2.4 0 -5Z" stroke-width="1.3"/></svg><h4>Summoning</h4><div class="gloss">calling new beings</div><p>Creating agents. The power that makes all the others recursive.</p></div>
+        <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 23 V11.5 l5.2 4.2L16 8.5l3.8 7.2L25 11.5V23 Z"/><path d="M7 26h18" stroke-width="1.4"/><circle cx="16" cy="18.5" r="1.2" fill="currentColor" stroke="none"/></svg><h4>Dominion</h4><div class="gloss">governing the rest</div><p>Decision rights, allocation, escalation. The highest-order power.</p></div>
+      </div>
     </div>
     <div class="col">
       <p class="reveal" style="color:var(--ink-soft); margin-bottom:10px;">Real agents are compounds. Describe any one of them as a recipe of schools:</p>
@@ -922,12 +958,12 @@
   </div>
 </section>
 
-<!-- ———————————————— VI · DOMAINS, NOT JOB TITLES ———————————————— -->
-<section data-chapter="VI · Domains, Not Job Titles">
+<!-- ———————————————— VII · DOMAINS, NOT JOB TITLES ———————————————— -->
+<section data-chapter="VII · Domains, Not Job Titles">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter VI</div>
+    <div class="eyebrow reveal">Chapter VII</div>
     <h2 class="reveal">The old stories assign <em>domains</em>, not job titles.</h2>
-    <p class="lede reveal">Hermes was never "Senior Communications Manager." The beings of myth hold territories: <em>Keeper of Knowledge</em>. <em>Guardian of Communications</em>. <em>Steward of Opportunity</em>. The shift sounds decorative. It isn't: domains describe responsibility without prescribing tasks, which is exactly what autonomous systems need.</p>
+    <p class="lede reveal">Hermes was never "Senior Communications Manager." The beings of myth hold territories: <em>Keeper of Knowledge</em>. <em>Guardian of Communications</em>. <em>Steward of Opportunity</em>. The shift sounds decorative, but it does real work: a domain describes responsibility without prescribing tasks, which is exactly what an autonomous system needs.</p>
   </div>
   <div class="wrap">
     <div class="arche-grid">
@@ -971,10 +1007,10 @@
   </div>
 </section>
 
-<!-- ———————————————— VII · IDENTITY ≠ CAPABILITY ———————————————— -->
-<section data-chapter="VII · Identity ≠ Capability">
+<!-- ———————————————— VIII · IDENTITY ≠ CAPABILITY ———————————————— -->
+<section data-chapter="VIII · Identity ≠ Capability">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter VII</div>
+    <div class="eyebrow reveal">Chapter VIII</div>
     <h2 class="reveal">Naming the being is half the design. Granting its powers is the other half.</h2>
     <p class="lede reveal">An Oracle isn't born with every Oracle power. Just because an agent is a Messenger doesn't mean it can send. Identity and capability stay separate — so power gets granted deliberately, one ability at a time.</p>
   </div>
@@ -988,10 +1024,10 @@
   </div>
 </section>
 
-<!-- ———————————————— VIII · THE PANTHEON ———————————————— -->
-<section data-chapter="VIII · The Pantheon Model">
+<!-- ———————————————— IX · THE PANTHEON ———————————————— -->
+<section data-chapter="IX · The Pantheon Model">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter VIII</div>
+    <div class="eyebrow reveal">Chapter IX</div>
     <h2 class="reveal">You don't summon one agent. You assemble a <em>pantheon</em>.</h2>
     <p class="lede reveal">Most people picture <strong>human → agent</strong>. Mythology pictures <strong>human → pantheon</strong>: a society of specialized beings, each with different powers, each with different autonomy, all reporting upward.</p>
   </div>
@@ -1019,10 +1055,10 @@
   <blockquote class="pullquote reveal">The pantheon is organizational design for non-human workers.</blockquote>
 </section>
 
-<!-- ———————————————— IX · THE AGENCY MAP ———————————————— -->
-<section data-chapter="IX · The Agency Map">
+<!-- ———————————————— X · THE AGENCY MAP ———————————————— -->
+<section data-chapter="X · The Agency Map">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter IX</div>
+    <div class="eyebrow reveal">Chapter X</div>
     <h2 class="reveal">From concept to application.</h2>
     <p class="lede reveal">Here's where we pivot from language to practice: an audit of how the team operates today, a shared picture of the future, and a build plan to close the gap.</p>
   </div>
@@ -1054,9 +1090,12 @@
       </div>
     </div>
   </div>
+  <div class="col prose">
+    <p class="reveal">Run the first three steps on a real team and you get something like the map below. It's an example, not a template — one design organization after the audit, the scoring, and the future-state session: every component of the operating model placed on the spectrum, the beings already in place marked, and the gaps where a being is still missing.</p>
+  </div>
   <div class="wrap">
     <div class="map reveal">
-      <div class="map-title">The Agency Map — one design organization, mapped</div>
+      <div class="map-title">The Agency Map — an example: one design organization, mapped</div>
       <div class="map-grid">
         <div class="corner"></div>
         <div class="mhead">0<br>Human</div><div class="mhead">1<br>Assists</div><div class="mhead">2<br>Recommends</div><div class="mhead">3<br>Approval</div><div class="mhead">4<br>Independent</div><div class="mhead">5<br>Governs</div>
@@ -1079,10 +1118,13 @@
         <span><span class="key sq"></span> Current extent of delegation</span>
       </div>
     </div>
+    <div class="col prose">
+      <p class="reveal" style="text-align:center; margin:0 auto;">Read across the rows and three things stand out — each one sitting in a specific part of the operating model:</p>
+    </div>
     <div class="findings">
-      <div class="finding reveal">Strong Builders. Weak Oracles.</div>
-      <div class="finding reveal d1">Communications mostly delegated; research still human-led.</div>
-      <div class="finding reveal d2">Portfolio planning lacks a Governor.</div>
+      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, but the only Oracle barely assists on <em>suppliers</em>. This organization is good at making things and nearly blind to what's coming.</span></div>
+      <div class="finding reveal d1">Communications run on their own; research still waits on a person.<span class="fnote">On the map: the Messenger handles <em>information systems</em> almost independently, while no being has taken over the looking-ahead work — the Oracle never rises above "assists."</span></div>
+      <div class="finding reveal d2">Portfolio planning has no Governor.<span class="fnote">On the map: <em>management systems</em> show a Steward assisting, but the "Governs" column is empty. The Governor that would own portfolio decisions — what to prioritize, fund, or drop — is missing entirely.</span></div>
     </div>
     <div class="col prose">
       <p class="reveal">One view shows where agency exists, where it's missing, where humans remain essential — and where the next being should be summoned. Most AI conversations start with "what agents should we build?" The better question is the one an operations leader would ask: <strong>how should the operating model evolve when agency becomes distributable?</strong></p>
@@ -1090,19 +1132,14 @@
   </div>
 </section>
 
-<!-- ———————————————— X · CLOSE ———————————————— -->
-<section id="close" data-chapter="X · The Powers We Grant">
+<!-- ———————————————— XI · CLOSE ———————————————— -->
+<section id="close" data-chapter="XI · The Powers We Grant">
   <div class="col prose" style="text-align:left">
-    <div class="eyebrow reveal">Chapter X</div>
-    <h2 class="reveal">Four layers, one language.</h2>
+    <div class="eyebrow reveal">Chapter XI</div>
+    <h2 class="reveal">The powers we choose to grant.</h2>
+    <p class="lede reveal">Four layers, one language: a cosmology, a pantheon, a system of powers, and the governance that holds them. We've now walked all four — from a being that only obeys to one that governs a whole domain.</p>
   </div>
-  <div class="layers">
-    <div class="layer reveal"><h4>Cosmology</h4><p><b>Why does this system exist?</b> The mission. The human intent.</p></div>
-    <div class="layer reveal d1"><h4>Pantheon</h4><p><b>Who exists?</b> Oracle, Messenger, Archivist, Builder, Steward, Governor.</p></div>
-    <div class="layer reveal d2"><h4>Magic</h4><p><b>What powers exist?</b> Sight, memory, creation, movement, influence, time, dominion.</p></div>
-    <div class="layer reveal d3"><h4>Governance</h4><p><b>What are the rules?</b> Permissions, escalation, trust, creation rights — the layer where most agent frameworks fall apart.</p></div>
-  </div>
-  <blockquote class="pullquote reveal">The challenge ahead isn't just building intelligent systems. It's developing a shared language for reasoning about a <em>society</em> of intelligent systems — and the powers we choose to grant them.</blockquote>
+  <blockquote class="pullquote reveal">The real challenge ahead is less about building intelligent systems than about finding a shared language for reasoning about a <em>society</em> of them — and choosing, deliberately, which powers to grant.</blockquote>
   <p class="footnote reveal">And there's a non-zero chance that all those hours of Dungeons &amp; Dragons were career preparation.</p>
   <div class="colophon reveal"><span class="star">✦</span>Jason Armstrong · The Mythology of Agents · 2026</div>
 </section>
