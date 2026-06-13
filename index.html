@@ -70,6 +70,42 @@
     0%, 100% { opacity: .14; transform: scale(1); }
     50% { opacity: .55; transform: scale(1.25); }
   }
+  /* ——— Celestial: drifting aurora of light + cloud ——— */
+  #aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  #aurora span {
+    position: absolute; border-radius: 50%; filter: blur(72px); opacity: .55; will-change: transform;
+  }
+  #aurora .a1 {
+    width: 62vw; height: 62vw; left: -12vw; top: -16vh;
+    background: radial-gradient(circle at 50% 50%, rgba(201,162,59,.22), transparent 70%);
+    animation: drift1 36s ease-in-out infinite alternate;
+  }
+  #aurora .a2 {
+    width: 56vw; height: 56vw; right: -14vw; top: 14vh;
+    background: radial-gradient(circle at 50% 50%, rgba(122,134,220,.18), transparent 70%);
+    animation: drift2 46s ease-in-out infinite alternate;
+  }
+  #aurora .a3 {
+    width: 50vw; height: 50vw; left: 22vw; bottom: -18vh;
+    background: radial-gradient(circle at 50% 50%, rgba(214,178,94,.16), transparent 70%);
+    animation: drift3 52s ease-in-out infinite alternate;
+  }
+  @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(7vw, 9vh) scale(1.16); } }
+  @keyframes drift2 { from { transform: translate(0,0) scale(1.06); } to { transform: translate(-6vw, -7vh) scale(.9); } }
+  @keyframes drift3 { from { transform: translate(0,0) scale(.95); } to { transform: translate(5vw, -6vh) scale(1.12); } }
+  /* ——— Celestial: occasional shooting star ——— */
+  .shooting-star {
+    position: fixed; top: 11%; left: 72%; z-index: 0; pointer-events: none;
+    width: 140px; height: 1.5px; opacity: 0; border-radius: 2px;
+    background: linear-gradient(90deg, transparent, rgba(201,162,59,.9));
+    transform: rotate(20deg); animation: shoot 17s ease-in 6s infinite;
+  }
+  @keyframes shoot {
+    0% { opacity: 0; transform: translate(0,0) rotate(20deg); }
+    2% { opacity: .85; }
+    8% { opacity: 0; transform: translate(-420px, 150px) rotate(20deg); }
+    100% { opacity: 0; transform: translate(-420px, 150px) rotate(20deg); }
+  }
 
   /* ——— Layout primitives ——— */
   main { position: relative; z-index: 1; }
@@ -128,7 +164,15 @@
     font-family: var(--serif); font-weight: 300; letter-spacing: -0.015em;
     font-size: clamp(46px, 8.4vw, 104px); line-height: 1.04; max-width: 900px;
   }
-  #hero h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+  #hero h1 em {
+    font-style: italic; font-weight: 400; color: var(--gold);
+    background: linear-gradient(100deg, var(--gold) 22%, var(--gold-bright) 40%, #F3E2A8 50%, var(--gold-bright) 60%, var(--gold) 78%);
+    background-size: 240% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: sheen 7s ease-in-out 1.4s infinite;
+  }
+  @keyframes sheen { 0% { background-position: 135% 0; } 55%, 100% { background-position: -35% 0; } }
   #hero .sub {
     margin-top: 34px; max-width: 560px; color: var(--ink-soft); font-size: 18px; line-height: 1.6;
   }
@@ -447,6 +491,9 @@
     #hero-constellation .cstar { animation: none; opacity: 1; }
     .star-dot { animation: none; opacity: .3; }
     .scroll-cue { animation: none; }
+    #aurora span { animation: none; }
+    .shooting-star { display: none; }
+    #hero h1 em { animation: none; background: none; -webkit-text-fill-color: var(--gold); }
     html { scroll-behavior: auto; }
   }
 </style>
@@ -455,7 +502,9 @@
 
 <div id="progress"></div>
 <div id="chapter-marker"><span class="star">✦</span><span id="chapter-label"></span></div>
+<div id="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
 <div id="starfield"></div>
+<div class="shooting-star" aria-hidden="true"></div>
 
 <main>
 
