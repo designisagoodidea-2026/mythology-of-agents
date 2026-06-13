@@ -407,6 +407,17 @@
   }
   .colophon { margin-top: 9vh; font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
   .colophon .star { color: var(--gold); display: block; margin-bottom: 14px; font-size: 13px; }
+  .about { max-width: 600px; margin: 22px auto 0; text-align: center; }
+  .about summary { display: inline-block; cursor: pointer; list-style: none; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--gold-faint); padding-bottom: 3px; transition: color .2s ease; }
+  .about summary::-webkit-details-marker { display: none; }
+  .about summary::marker { content: ""; }
+  .about summary:hover, .about summary:focus-visible { color: var(--gold); outline: none; }
+  .about[open] summary { margin-bottom: 22px; }
+  .about-body { text-align: left; }
+  .about-body h4 { font-family: var(--serif); font-weight: 500; font-size: 17px; color: var(--ink); margin-bottom: 12px; }
+  .about-body p { font-size: 14px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 1em; }
+  .about-body a { color: var(--gold); }
+  .about-body .sig { font-family: var(--serif); font-style: italic; color: var(--ink); }
 
   /* ——— Responsive ——— */
   @media (max-width: 880px) {
@@ -921,6 +932,17 @@
   <blockquote class="pullquote reveal">The real challenge ahead is less about building intelligent systems than about finding a shared language for reasoning about a <em>society</em> of them — and choosing, deliberately, which powers to grant.</blockquote>
   <p class="footnote reveal">And there's a non-zero chance that all those hours of Dungeons &amp; Dragons were career preparation.</p>
   <div class="colophon reveal"><span class="star">✦</span>Jason Armstrong · The Mythology of Agents · 2026</div>
+  <details class="about reveal">
+    <summary>About</summary>
+    <div class="about-body">
+      <h4>About this piece</h4>
+      <p>This began as notes I was keeping for myself while building with AI agents, and grew into the piece you've just read.</p>
+      <p>Every mythology here — Greek, Norse, Egyptian, Mesopotamian — is one no longer practiced as a living faith. That was deliberate. Folklore named as folklore stays; the "schools of magic" are borrowed openly from tabletop fantasy, which is recent and makes no claim to be ancient or sacred.</p>
+      <p>I made an effort to check the mythological and historical claims against primary sources and correct what didn't hold up — a runaway broom that belongs to Goethe rather than Lucian, a Golem of Prague that's a nineteenth-century legend rather than a medieval one.</p>
+      <p>None of this makes the framework true. It's a v1 creative framework, not a scientific diagnostic — a way to think and talk about systems we don't yet have good words for. If anything here feels wrong, I'd want to hear it: <a href="mailto:designisagoodidea@gmail.com">designisagoodidea@gmail.com</a></p>
+      <p class="sig">— Jason Armstrong</p>
+    </div>
+  </details>
 </section>
 
 </main>
