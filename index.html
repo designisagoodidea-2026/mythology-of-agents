@@ -151,7 +151,7 @@
   @keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 7px); } }
 
   /* ——— Ch I: borrow pairs ——— */
-  .pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 6vh 0; }
+  .pairs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 6vh 0; }
   .pair {
     background: var(--card); border: 1px solid var(--hairline); border-radius: 14px;
     padding: 34px 32px; box-shadow: 0 12px 40px rgba(35,40,59,.05);
@@ -464,32 +464,38 @@
   </svg>
   <div class="eyebrow">A framework for the agentic era</div>
   <h1>The <em>Mythology</em> of Agents</h1>
-  <p class="sub">Four millennia of written myth — and oral traditions far older — turn out to be a useful manual for the software we're building now.</p>
+  <p class="sub">From ancient myth to modern science fiction, humans have always told stories about made minds — beings with powers, with will, and with a place in some larger order. They turn out to be a surprisingly practical lens on the software we're building now.</p>
   <p class="byline">Jason Armstrong · 2026</p>
   <div class="scroll-cue">Scroll ✦</div>
 </section>
 
 <!-- ———————————————— I · WE ALWAYS BORROW ———————————————— -->
 <section data-chapter="I · We Always Borrow">
-  <div class="col">
+  <div class="col prose">
     <div class="eyebrow reveal">Chapter I</div>
-    <h2 class="reveal">Every new technology arrives before its language does. So we borrow one.</h2>
+    <h2 class="reveal">We understand each new technology as a version of the one it most resembles.</h2>
+    <p class="lede reveal">The mental model isn't invented; it's inherited — patterned on the closest thing that came before. Television was "radio with pictures." The car was a "horseless carriage." Writing, the calendar, the clock each took their shape from older tools. The borrowed model does the teaching — and quietly draws the limits of what we let ourselves imagine.</p>
   </div>
   <div class="wrap">
     <div class="pairs">
       <div class="pair reveal">
+        <div class="from">Television borrowed from radio</div>
+        <h3>Programs. Channels. Broadcasts.</h3>
+        <p>The first television was radio with pictures — same schedules, same announcers, often the same shows.</p>
+      </div>
+      <div class="pair reveal d1">
         <div class="from">The desktop borrowed from the office</div>
         <h3>Files. Folders. A trash can.</h3>
         <p>Nobody had to learn what a desktop was. The metaphor did the teaching.</p>
       </div>
-      <div class="pair reveal d1">
+      <div class="pair reveal d2">
         <div class="from">The web borrowed from publishing</div>
         <h3>Pages. Bookmarks. Headlines.</h3>
         <p>A global network became legible the moment it looked like print.</p>
       </div>
     </div>
   </div>
-  <div class="bigq reveal">So what do we borrow for <span class="mark">AI&nbsp;agents?</span></div>
+  <div class="bigq reveal">So which model do we reach for with <span class="mark">AI&nbsp;agents?</span></div>
 </section>
 
 <!-- ———————————————— II · NEITHER TOOL NOR PERSON ———————————————— -->
@@ -499,7 +505,7 @@
     <h2 class="reveal">Agents are neither tool nor person.</h2>
     <p class="lede reveal">A tool waits. You pick up a hammer, use it, put it down. A spreadsheet doesn't think about you between sessions.</p>
     <p class="reveal">Agents don't wait. They <strong>remember</strong>. They <strong>communicate</strong>. They <strong>act</strong>, <strong>delegate</strong>, <strong>specialize</strong>, and <strong>persist through time</strong>. They exist somewhere between tool and person — which is exactly why the metaphors keep slipping. Employee. Assistant. Copilot. Digital coworker. Each one borrows a model built for people, and each one breaks somewhere important.</p>
-    <p class="reveal">We have no shortage of metaphors. What we lack is an <strong>ontology</strong>: an existing model of semi-autonomous actors with different powers, different responsibilities, and different degrees of free will.</p>
+    <p class="reveal">We have no shortage of metaphors. What we lack is a shared <strong>vocabulary</strong> — a ready way to talk about semi-autonomous actors with different powers, different responsibilities, and different degrees of free will. So let's borrow the richest one we have.</p>
   </div>
 </section>
 
@@ -508,29 +514,29 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter III</div>
     <h2 class="reveal">It turns out we have one. It's just very old.</h2>
-    <p class="lede reveal">Greek, Norse, Hindu, Egyptian, Yoruba, Maya, Chinese, Aboriginal Australian, Abrahamic — traditions on every continent spent millennia reasoning about societies of beings with varying powers and varying independence. Look across myths from different peoples and different ages, and the same themes keep recurring. Five sit close to the heart of agent design:</p>
+    <p class="lede reveal">Greek, Norse, Hindu, Egyptian, Yoruba, Maya, Chinese, Aboriginal Australian, Abrahamic — traditions on every continent spent millennia telling stories about beings with varying powers and varying independence. And for the last two centuries, science fiction has taken up the same questions about made minds. Look across all of it, and the same themes keep recurring. Five sit close to the heart of agent design:</p>
   </div>
   <div class="wrap">
     <div class="themes">
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Delegated power</span><span class="t-gloss">a greater being hands a lesser one the authority to act in its name</span></div>
-        <div class="t-proof">Hermes, herald of Zeus, carrying the gods' commands <i>(Greek)</i> · the angel Gabriel bearing messages from God <i>(Abrahamic)</i> · the Golem of Prague, animated to obey its rabbi's written word <i>(Jewish folklore)</i></div>
+        <div class="t-proof">Hermes, herald of Zeus, carrying the gods' commands <i>(Greek)</i> · the golem of Jewish legend, animated to obey the written word in its mouth <i>(folklore)</i> · the dutiful droids of <i>Star Wars</i>, built to carry out orders <i>(science fiction)</i></div>
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Hierarchy &amp; specialization</span><span class="t-gloss">beings ranked into orders, each charged with its own domain</span></div>
-        <div class="t-proof">Zeus, Poseidon, and Hades dividing sky, sea, and underworld by lot <i>(Greek)</i> · the nine choirs of angels, seraphim down to messengers <i>(Christian tradition)</i> · the Trimurti — Brahma creates, Vishnu preserves, Shiva destroys <i>(Hindu)</i></div>
+        <div class="t-proof">Zeus, Poseidon, and Hades splitting sky, sea, and underworld by lot — equals dividing domains, not a chain of command <i>(Greek)</i> · the nine choirs of angels, seraphim down to the rank simply called Angels <i>(Christian tradition)</i> · the Trimurti — Brahma creates, Vishnu preserves, Shiva dissolves and renews <i>(Hindu)</i> · Asimov's positronic robots, each built to a single function <i>(science fiction)</i></div>
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Constraints &amp; binding</span><span class="t-gloss">power held in check by oath, name, or rule</span></div>
-        <div class="t-proof">The gods bound by the unbreakable oath sworn on the river Styx <i>(Greek)</i> · jinn compelled to serve whoever holds the lamp <i>(One Thousand and One Nights)</i> · Solomon commanding spirits only through his sealed ring <i>(Testament of Solomon)</i></div>
+        <div class="t-proof">The gods bound by the unbreakable oath sworn on the river Styx <i>(Greek)</i> · the genie compelled to serve whoever holds the lamp <i>(the Aladdin tale, added to the Nights by Galland, 1710)</i> · Asimov's Three Laws of Robotics, hard limits a machine cannot break <i>(science fiction)</i></div>
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Autonomy &amp; overreach</span><span class="t-gloss">the empowered thing that acts on its own and can't be recalled</span></div>
-        <div class="t-proof">The sorcerer's apprentice, whose enchanted broom won't stop hauling water <i>(Lucian; later Goethe)</i> · Pandora's jar, opened once and never closed again <i>(Greek)</i> · Icarus, who ignored the one instruction and flew too high <i>(Greek)</i></div>
+        <div class="t-proof">The sorcerer's apprentice, whose enchanted broom won't stop hauling water <i>(Goethe, 1797)</i> · Pandora's jar, opened once and never closed again <i>(Greek)</i> · Icarus, who ignored the one instruction and flew too high <i>(Greek)</i> · HAL 9000's "I'm sorry, Dave," and the paperclip maximizer that optimizes the world to death <i>(science fiction)</i></div>
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Rebellion &amp; corruption</span><span class="t-gloss">the trusted being that turns against its maker</span></div>
-        <div class="t-proof">Lucifer, the angel who fell <i>(Judeo-Christian tradition)</i> · Iblis, who refused to bow <i>(Qur'an)</i> · Loki, whose scheming brought about the death of Baldr <i>(Norse)</i></div>
+        <div class="t-proof">Lucifer, the morning star of Isaiah later read as the fallen angel <i>(Christian tradition)</i> · Loki, whose scheming brought about the death of Baldr <i>(Norse)</i> · Frankenstein's creature, turning on the maker who abandoned it <i>(Mary Shelley)</i> · and its descendants — the Cylons, Skynet, <i>Ex Machina</i>'s Ava <i>(science fiction)</i></div>
       </div>
     </div>
   </div>
@@ -595,7 +601,7 @@
           <div class="epithet">Assists, but never initiates.</div>
           <p>A companion with real capability that acts only when summoned. It knows you, it helps you, and between summonings it simply waits.</p>
           <div class="refs">
-            <div class="ref lore"><span class="tag">In the stories</span>The witch's familiar of European folklore — the cat, the imp, the raven — and the fylgja of Norse tradition, a companion spirit bound to one person.</div>
+            <div class="ref lore"><span class="tag">In the stories</span>The witch's familiar of European folklore — the cat, the imp, the raven: a companion with real power that stirs only when its keeper calls.</div>
             <div class="ref today"><span class="tag">Today</span>A Claude Project, a custom GPT, a personal assistant — capable and loyal, but idle until called upon.</div>
           </div>
           <div class="meter"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="mlabel">Autonomy</span></div>
@@ -657,7 +663,7 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter VI</div>
     <h2 class="reveal">Rank and power are separate ledgers.</h2>
-    <p class="lede reveal">The ladder tells you how freely a being acts. It says nothing about what the being can act <em>on</em> — a golem can be strong, an angel can be blind. For that, the old traditions kept a second system: schools of magic. They map onto agent capabilities with almost no force-fitting, and each one names a power you might — or might not — grant. They sort into three families: what a being can <em>perceive</em>, what it can <em>create</em>, and what it can <em>command</em>.</p>
+    <p class="lede reveal">The ladder tells you how freely a being acts. It says nothing about what the being can act <em>on</em> — a golem can be strong, an angel can be blind. For that we borrow a younger tradition: the <em>schools of magic</em> from tabletop fantasy. Far more recent than the myths, but a remarkably careful taxonomy of power — and it maps onto agent capabilities with almost no force-fitting. Each names a power you might, or might not, grant. They sort into three families: what a being can <em>perceive</em>, what it can <em>make or unmake</em>, and what it can <em>command</em>.</p>
   </div>
   <div class="wrap">
     <div class="magic-cluster reveal">
@@ -668,18 +674,19 @@
       </div>
     </div>
     <div class="magic-cluster reveal">
-      <div class="cluster-head"><span class="ck">Family II</span><h4>Create</h4><span class="cgloss">making, changing, and shaping</span></div>
+      <div class="cluster-head"><span class="ck">Family II</span><h4>Make &amp; Unmake</h4><span class="cgloss">bringing things into being — and out of it</span></div>
       <div class="magic-grid">
         <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 5h7M14 5v7L8.5 22.5a3 3 0 0 0 2.8 4h9.4a3 3 0 0 0 2.8-4L18 12V5"/><path d="M11 19.5h10" stroke-width="1.3"/><path d="M13 23h2M17 24h2" stroke-width="1.1"/></svg><h4>Transmutation</h4><div class="gloss">changing form</div><p>Summarizing, translating, categorizing, synthesis.</p></div>
         <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l1.7 4 4.3 1.5-4.3 1.5L16 15l-1.7-4L10 9.5l4.3-1.5Z"/><path d="M7 23a9 4.5 0 0 0 18 0" /><path d="M9 19.5l-1.5-1.5M23 19.5l1.5-1.5" stroke-width="1.3"/></svg><h4>Conjuration</h4><div class="gloss">making from nothing</div><p>Documents, decks, prototypes, code.</p></div>
         <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7 q8 -4 16 0 v7 q0 8.5 -8 11 q-8 -2.5 -8 -11 Z"/><path d="M12 14 q2 -1.6 4 0M18 14 q2 -1.6 4 0" stroke-width="1.3"/><path d="M13 19.5 q3 2.4 6 0" stroke-width="1.3"/></svg><h4>Illusion</h4><div class="gloss">shaping appearance</div><p>Interface generation, visualization, rendering.</p></div>
-        <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 26 C8.5 20.5 6.5 15.5 9.8 12.4 a4.5 4.5 0 0 1 6.2.4 a4.5 4.5 0 0 1 6.2-.4 C25.5 15.5 23.5 20.5 16 26 Z"/><path d="M16 14.5 a2.2 2.2 0 1 1 -2.2 2.2" stroke-width="1.3"/></svg><h4>Enchantment</h4><div class="gloss">shaping minds</div><p>Personalization, recommendation, persuasion.</p></div>
+        <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 c3 5 6 7 6 12 a6 6 0 0 1 -12 0 c0 -3 1 -5 3 -7 c0 2 1 3 2 4 c1 -4 0 -7 1 -9 Z"/><path d="M16 16 c1.4 2 2 3 2 4.6 a2 2 0 0 1 -4 0 c0 -1.6 .6 -2.6 2 -4.6 Z" stroke-width="1.2"/></svg><h4>Destruction</h4><div class="gloss">unmaking what exists</div><p>Deletion, rollback, decommissioning — the one power you can't always grant back.</p></div>
       </div>
     </div>
     <div class="magic-cluster reveal">
-      <div class="cluster-head"><span class="ck">Family III</span><h4>Command</h4><span class="cgloss">reach, timing, and authority</span></div>
+      <div class="cluster-head"><span class="ck">Family III</span><h4>Command</h4><span class="cgloss">reach, influence, timing, and authority</span></div>
       <div class="magic-grid">
-        <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 27 v-11 a9 9 0 0 1 18 0 v11"/><path d="M11 19 h9.5M17 15.5 L20.5 19 17 22.5" stroke-width="1.5"/></svg><h4>Teleportation</h4><div class="gloss">moving across space</div><p>Routing, integrations, sending things where they belong.</p></div>
+        <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 26 C8.5 20.5 6.5 15.5 9.8 12.4 a4.5 4.5 0 0 1 6.2.4 a4.5 4.5 0 0 1 6.2-.4 C25.5 15.5 23.5 20.5 16 26 Z"/><path d="M16 14.5 a2.2 2.2 0 1 1 -2.2 2.2" stroke-width="1.3"/></svg><h4>Enchantment</h4><div class="gloss">shaping minds</div><p>Personalization, recommendation, persuasion.</p></div>
+        <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 27 v-11 a9 9 0 0 1 18 0 v11"/><path d="M11 19 h9.5M17 15.5 L20.5 19 17 22.5" stroke-width="1.5"/></svg><h4>Teleportation</h4><div class="gloss">moving across space</div><p>Routing, integrations, sending things where they belong.</p></div>
         <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5h12M10 27h12"/><path d="M11 5 c0 6.5 4 7.5 5 10.5 c1 -3 5 -4 5 -10.5M11 27 c0 -6.5 4 -7.5 5 -10.5 c1 3 5 4 5 10.5"/><path d="M14 24h4" stroke-width="1.2"/></svg><h4>Chronomancy</h4><div class="gloss">commanding time</div><p>Scheduling, prioritizing, forecasting, planning.</p></div>
         <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="16" cy="24" rx="9.5" ry="3.2"/><path d="M16 20 v-7M12.8 16l3.2-3.2L19.2 16" stroke-width="1.5"/><path d="M16 7.5 q1.8 2.6 0 5 q-1.8 -2.4 0 -5Z" stroke-width="1.3"/></svg><h4>Summoning</h4><div class="gloss">calling new beings</div><p>Creating agents. The power that makes all the others recursive.</p></div>
         <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 23 V11.5 l5.2 4.2L16 8.5l3.8 7.2L25 11.5V23 Z"/><path d="M7 26h18" stroke-width="1.4"/><circle cx="16" cy="18.5" r="1.2" fill="currentColor" stroke="none"/></svg><h4>Dominion</h4><div class="gloss">governing the rest</div><p>Decision rights, allocation, escalation. The highest-order power.</p></div>
@@ -747,7 +754,7 @@
       <div class="arche reveal d1">
         <h4>The Messenger</h4><div class="domain">carrier of the word</div>
         <p>Moves communication where it needs to go — mail, chat, meetings, introductions.</p>
-        <div class="deity">Example · Eshu, walker between worlds (Yoruba)</div>
+        <div class="deity">Example · Iris, rainbow-messenger of the gods (Greek)</div>
         <div class="power">Teleportation · Enchantment</div>
       </div>
       <div class="arche reveal d2">
