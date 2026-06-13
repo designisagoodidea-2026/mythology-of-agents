@@ -267,8 +267,11 @@
   .compound { border-top: 1px solid var(--gold-faint); padding-top: 22px; }
   .compound .ctitle { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
   .compound .who { font-family: var(--serif); font-weight: 500; font-size: 27px; }
+  .compound .rung { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--gold); }
+  .compound .rung::before { content: "▸ "; font-style: normal; font-size: 11px; vertical-align: 1px; }
   .compound .spells { color: var(--ink-soft); font-size: 13.5px; letter-spacing: .04em; }
   .compound .spells i { color: var(--gold); font-style: normal; padding: 0 5px; }
+  .compound .ctitle .spells { width: 100%; }
   .compound .breakdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 16px 0 14px; }
   .compound .breakdown div { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
   .compound .breakdown div b { display: block; color: var(--ink); font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 5px; }
@@ -653,11 +656,11 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter VII</div>
     <h2 class="reveal">No real agent is a single school. Each one is a <em>recipe</em>.</h2>
-    <p class="lede reveal">Naming that recipe is a creative act, not a lookup. There's no canonical spell-list for "an inbox agent" — you're deciding which powers this particular being should hold, and which it shouldn't. The old stories help twice over: as a guide to what each power does, and as hard-won wisdom about what it costs to grant.</p>
+    <p class="lede reveal">Naming that recipe is a creative act, not a lookup. There's no canonical spell-list for "an inbox agent" — you're deciding which powers this particular being should hold, and which it shouldn't. And each agent begins as one of the five beings from the ladder: its <em>rung</em> sets how freely it acts, the <em>powers</em> set what it can act on. The old stories help twice over — as a guide to what each power does, and as hard-won wisdom about what it costs to grant.</p>
   </div>
   <div class="compounds">
     <div class="compound reveal">
-      <div class="ctitle"><span class="who">The inbox agent</span><span class="spells">Divination <i>✦</i> Chronomancy <i>✦</i> Teleportation</span></div>
+      <div class="ctitle"><span class="who">The inbox agent</span><span class="rung">the Angel · rung 3</span><span class="spells">Divination <i>✦</i> Chronomancy <i>✦</i> Teleportation</span></div>
       <div class="breakdown">
         <div><b>Divination</b>Reads the flow of incoming mail and senses what matters before you ask.</div>
         <div><b>Chronomancy</b>Orders your time — what's urgent, what can wait, what to surface and when.</div>
@@ -666,7 +669,7 @@
       <p class="note reveal">Notice what it's <em>not</em> granted: no Conjuration, no Dominion. It can sort and route, but it shouldn't be writing and sending in your name unwatched. Mythology is full of messengers who took one liberty too many.</p>
     </div>
     <div class="compound reveal">
-      <div class="ctitle"><span class="who">The research assistant</span><span class="spells">Divination <i>✦</i> Summoning <i>✦</i> Transmutation</span></div>
+      <div class="ctitle"><span class="who">The research assistant</span><span class="rung">the Demigod · rung 4</span><span class="spells">Divination <i>✦</i> Summoning <i>✦</i> Transmutation</span></div>
       <div class="breakdown">
         <div><b>Divination</b>Searches the field and watches for what's new or relevant.</div>
         <div><b>Summoning</b>Calls up sub-agents to chase several threads at once.</div>
@@ -675,7 +678,7 @@
       <p class="note reveal">Summoning is the power to make more beings — the one that makes all the others recursive. Granted lightly, one assistant quietly becomes a crowd. Nearly every tradition that let its creations create again kept a story about it getting away from them.</p>
     </div>
     <div class="compound reveal">
-      <div class="ctitle"><span class="who">The design copilot</span><span class="spells">Transmutation <i>✦</i> Illusion <i>✦</i> Conjuration</span></div>
+      <div class="ctitle"><span class="who">The design copilot</span><span class="rung">the Familiar · rung 2</span><span class="spells">Transmutation <i>✦</i> Illusion <i>✦</i> Conjuration</span></div>
       <div class="breakdown">
         <div><b>Transmutation</b>Reworks an idea from one form to another — words to layout, sketch to spec.</div>
         <div><b>Illusion</b>Shapes appearance — mockups, visualizations, the look of a thing.</div>
