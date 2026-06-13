@@ -26,8 +26,7 @@
     --sans: "Inter", -apple-system, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
-  main > section { scroll-snap-align: start; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: var(--sans);
     color: var(--ink);
@@ -182,7 +181,7 @@
     position: sticky; top: 0; height: 100vh; display: flex; align-items: center;
     padding: 0 28px; overflow: hidden;
   }
-  .chain-grid { display: grid; grid-template-columns: 200px 1fr; gap: 60px; max-width: 980px; margin: 0 auto; width: 100%; align-items: center; }
+  .chain-grid { display: grid; grid-template-columns: 190px 1fr; gap: 50px; max-width: 1200px; margin: 0 auto; width: 100%; align-items: center; }
   .chain-rail { display: flex; flex-direction: column; gap: 0; position: relative; }
   .chain-rail::before {
     content: ""; position: absolute; left: 7px; top: 16px; bottom: 16px; width: 1px;
@@ -197,7 +196,7 @@
   .rail-node.active .dot { border-color: var(--gold); background: var(--gold-bright); box-shadow: 0 0 0 6px var(--gold-faint); }
   .rail-node.active .lbl { color: var(--ink); }
   .rail-node.passed .dot { border-color: var(--gold); background: var(--bg); }
-  .chain-stage { position: relative; min-height: 460px; }
+  .chain-stage { position: relative; min-height: 560px; }
   .stage {
     position: absolute; inset: 0; opacity: 0; transform: translateY(26px);
     transition: opacity .55s ease, transform .55s ease; pointer-events: none;
@@ -222,23 +221,17 @@
   .meter .pip.on { background: linear-gradient(90deg, var(--gold-bright), var(--gold)); }
   .meter .mlabel { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-left: 10px; }
 
-  /* ——— Ink plates (manual-style illustrations) ——— */
-  .stage { padding-right: 230px; }
+  /* ——— Ink plates (manual-style illustrations, frameless) ——— */
+  .stage { padding-right: 470px; }
   .stage-art {
-    position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-    width: 192px; text-align: center; color: var(--ink);
+    position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+    width: 460px; text-align: center; color: var(--ink);
   }
-  .stage-art .frame {
-    border: 1.5px solid var(--ink); position: relative;
-    padding: 16px 12px 10px; background: rgba(255, 255, 255, .55);
-  }
-  .stage-art .frame::before {
-    content: ""; position: absolute; inset: -6px; border: 1px solid rgba(35, 40, 59, .45); pointer-events: none;
-  }
+  .stage-art .frame { position: relative; }
   .stage-art svg, .stage-art img { width: 100%; height: auto; display: block; }
   .plate-cap {
-    font-family: var(--serif); font-style: italic; font-size: 12.5px;
-    color: var(--ink-soft); margin-top: 12px; letter-spacing: .04em;
+    font-family: var(--serif); font-style: italic; font-size: 13.5px;
+    color: var(--ink-soft); margin-top: 4px; letter-spacing: .04em;
   }
   .spell { position: relative; }
   .spell-icon { position: absolute; top: 16px; right: 14px; width: 27px; height: 27px; color: var(--ink); opacity: .8; }
@@ -268,6 +261,18 @@
   .compose-row .who { font-family: var(--serif); font-size: 19px; font-weight: 500; min-width: 215px; }
   .compose-row .spells { color: var(--ink-soft); font-size: 14.5px; letter-spacing: .03em; }
   .compose-row .spells i { color: var(--gold); font-style: normal; padding: 0 6px; }
+  /* ——— Ch VII: agents are compounds (full screen) ——— */
+  .full { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+  .compounds { display: flex; flex-direction: column; gap: 30px; margin: 5vh auto 4vh; max-width: 800px; width: 100%; }
+  .compound { border-top: 1px solid var(--gold-faint); padding-top: 22px; }
+  .compound .ctitle { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
+  .compound .who { font-family: var(--serif); font-weight: 500; font-size: 27px; }
+  .compound .spells { color: var(--ink-soft); font-size: 13.5px; letter-spacing: .04em; }
+  .compound .spells i { color: var(--gold); font-style: normal; padding: 0 5px; }
+  .compound .breakdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 16px 0 14px; }
+  .compound .breakdown div { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .compound .breakdown div b { display: block; color: var(--ink); font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 5px; }
+  .compound .note { font-size: 14px; color: var(--ink-soft); border-left: 2px solid var(--gold-faint); padding-left: 14px; max-width: 700px; }
 
   /* ——— Ch VI: archetypes ——— */
   .arche-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 6vh 0 2vh; }
@@ -377,6 +382,7 @@
   @media (max-width: 880px) {
     .magic-grid { grid-template-columns: repeat(2, 1fr); }
     .magic-cluster .magic-grid { grid-template-columns: repeat(2, 1fr); }
+    .compound .breakdown { grid-template-columns: 1fr; gap: 12px; }
     .arche-grid { grid-template-columns: 1fr; }
     .problems { grid-template-columns: repeat(2, 1fr); }
     .pairs { grid-template-columns: 1fr; }
@@ -639,21 +645,54 @@
         <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 23 V11.5 l5.2 4.2L16 8.5l3.8 7.2L25 11.5V23 Z"/><path d="M7 26h18" stroke-width="1.4"/><circle cx="16" cy="18.5" r="1.2" fill="currentColor" stroke="none"/></svg><h4>Dominion</h4><div class="gloss">governing the rest</div><p>Decision rights, allocation, escalation. The highest-order power.</p></div>
       </div>
     </div>
-    <div class="col">
-      <p class="reveal" style="color:var(--ink-soft); margin-bottom:10px;">Real agents are compounds. Describe any one of them as a recipe of schools:</p>
-      <div class="compose">
-        <div class="compose-row reveal"><span class="who">An inbox agent</span><span class="spells">Divination <i>✦</i> Chronomancy <i>✦</i> Teleportation</span></div>
-        <div class="compose-row reveal d1"><span class="who">A research assistant</span><span class="spells">Divination <i>✦</i> Summoning <i>✦</i> Transmutation</span></div>
-        <div class="compose-row reveal d2"><span class="who">A design copilot</span><span class="spells">Transmutation <i>✦</i> Illusion <i>✦</i> Conjuration</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- ———————————————— VII · DOMAINS, NOT JOB TITLES ———————————————— -->
-<section data-chapter="VII · Domains, Not Job Titles">
+<!-- ———————————————— VII · AGENTS ARE COMPOUNDS ———————————————— -->
+<section class="full" data-chapter="VII · Agents Are Compounds">
   <div class="col prose">
     <div class="eyebrow reveal">Chapter VII</div>
+    <h2 class="reveal">No real agent is a single school. Each one is a <em>recipe</em>.</h2>
+    <p class="lede reveal">Naming that recipe is a creative act, not a lookup. There's no canonical spell-list for "an inbox agent" — you're deciding which powers this particular being should hold, and which it shouldn't. The old stories help twice over: as a guide to what each power does, and as hard-won wisdom about what it costs to grant.</p>
+  </div>
+  <div class="compounds">
+    <div class="compound reveal">
+      <div class="ctitle"><span class="who">The inbox agent</span><span class="spells">Divination <i>✦</i> Chronomancy <i>✦</i> Teleportation</span></div>
+      <div class="breakdown">
+        <div><b>Divination</b>Reads the flow of incoming mail and senses what matters before you ask.</div>
+        <div><b>Chronomancy</b>Orders your time — what's urgent, what can wait, what to surface and when.</div>
+        <div><b>Teleportation</b>Moves messages where they belong — routing, filing, forwarding.</div>
+      </div>
+      <p class="note reveal">Notice what it's <em>not</em> granted: no Conjuration, no Dominion. It can sort and route, but it shouldn't be writing and sending in your name unwatched. Mythology is full of messengers who took one liberty too many.</p>
+    </div>
+    <div class="compound reveal">
+      <div class="ctitle"><span class="who">The research assistant</span><span class="spells">Divination <i>✦</i> Summoning <i>✦</i> Transmutation</span></div>
+      <div class="breakdown">
+        <div><b>Divination</b>Searches the field and watches for what's new or relevant.</div>
+        <div><b>Summoning</b>Calls up sub-agents to chase several threads at once.</div>
+        <div><b>Transmutation</b>Renders what it gathers into a brief you can actually use.</div>
+      </div>
+      <p class="note reveal">Summoning is the power to make more beings — the one that makes all the others recursive. Granted lightly, one assistant quietly becomes a crowd. Nearly every tradition that let its creations create again kept a story about it getting away from them.</p>
+    </div>
+    <div class="compound reveal">
+      <div class="ctitle"><span class="who">The design copilot</span><span class="spells">Transmutation <i>✦</i> Illusion <i>✦</i> Conjuration</span></div>
+      <div class="breakdown">
+        <div><b>Transmutation</b>Reworks an idea from one form to another — words to layout, sketch to spec.</div>
+        <div><b>Illusion</b>Shapes appearance — mockups, visualizations, the look of a thing.</div>
+        <div><b>Conjuration</b>Makes new artifacts from nothing — components, drafts, code.</div>
+      </div>
+      <p class="note reveal">Three making-powers and nothing that perceives or governs. A prolific maker with no Oracle beside it will produce the wrong thing, beautifully and at speed. Pair it with someone — or something — that decides whether it should.</p>
+    </div>
+  </div>
+  <div class="col prose">
+    <p class="reveal">This composing is the creative part of the work, and the unfamiliar part. We don't have a century of practice assembling societies of agents. What we do have is a few thousand years of stories about granting power to beings that aren't us — what they can do with it, and what tends to happen next. Read them as both blueprint and warning.</p>
+  </div>
+</section>
+
+<!-- ———————————————— VIII · DOMAINS, NOT JOB TITLES ———————————————— -->
+<section data-chapter="VIII · Domains, Not Job Titles">
+  <div class="col prose">
+    <div class="eyebrow reveal">Chapter VIII</div>
     <h2 class="reveal">The old stories assign <em>domains</em>, not job titles.</h2>
     <p class="lede reveal">Hermes was never "Senior Communications Manager." The beings of myth hold territories: <em>Keeper of Knowledge</em>. <em>Guardian of Communications</em>. <em>Steward of Opportunity</em>. The shift sounds decorative, but it does real work: a domain describes responsibility without prescribing tasks, which is exactly what an autonomous system needs.</p>
   </div>
@@ -699,10 +738,10 @@
   </div>
 </section>
 
-<!-- ———————————————— VIII · IDENTITY ≠ CAPABILITY ———————————————— -->
-<section data-chapter="VIII · Identity ≠ Capability">
+<!-- ———————————————— IX · IDENTITY ≠ CAPABILITY ———————————————— -->
+<section data-chapter="IX · Identity ≠ Capability">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter VIII</div>
+    <div class="eyebrow reveal">Chapter IX</div>
     <h2 class="reveal">Naming the being is half the design. Granting its powers is the other half.</h2>
     <p class="lede reveal">An Oracle isn't born with every Oracle power. Just because an agent is a Messenger doesn't mean it can send. Identity and capability stay separate — so power gets granted deliberately, one ability at a time.</p>
   </div>
@@ -716,10 +755,10 @@
   </div>
 </section>
 
-<!-- ———————————————— IX · THE PANTHEON ———————————————— -->
-<section data-chapter="IX · The Pantheon Model">
+<!-- ———————————————— X · THE PANTHEON ———————————————— -->
+<section data-chapter="X · The Pantheon Model">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter IX</div>
+    <div class="eyebrow reveal">Chapter X</div>
     <h2 class="reveal">You don't summon one agent. You assemble a <em>pantheon</em>.</h2>
     <p class="lede reveal">Most people picture <strong>human → agent</strong>. Mythology pictures <strong>human → pantheon</strong>: a society of specialized beings, each with different powers, each with different autonomy, all reporting upward.</p>
   </div>
@@ -747,10 +786,10 @@
   <blockquote class="pullquote reveal">The pantheon is organizational design for non-human workers.</blockquote>
 </section>
 
-<!-- ———————————————— X · THE AGENCY MAP ———————————————— -->
-<section data-chapter="X · The Agency Map">
+<!-- ———————————————— XI · THE AGENCY MAP ———————————————— -->
+<section data-chapter="XI · The Agency Map">
   <div class="col prose">
-    <div class="eyebrow reveal">Chapter X</div>
+    <div class="eyebrow reveal">Chapter XI</div>
     <h2 class="reveal">From concept to application.</h2>
     <p class="lede reveal">Here's where we pivot from language to practice: an audit of how the team operates today, a shared picture of the future, and a build plan to close the gap.</p>
   </div>
@@ -811,12 +850,12 @@
       </div>
     </div>
     <div class="col prose">
-      <p class="reveal" style="text-align:center; margin:0 auto;">Read across the rows and three things stand out — each one sitting in a specific part of the operating model:</p>
+      <p class="reveal" style="text-align:center; margin:0 auto;">Read across the rows and three things stand out. Each describes the <em>AI layer</em> — what's been handed to agents and what hasn't — not the people, who may well cover these gaps off-map:</p>
     </div>
     <div class="findings">
-      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, but the only Oracle barely assists on <em>suppliers</em>. This organization is good at making things and nearly blind to what's coming.</span></div>
-      <div class="finding reveal d1">Communications run on their own; research still waits on a person.<span class="fnote">On the map: the Messenger handles <em>information systems</em> almost independently, while no being has taken over the looking-ahead work — the Oracle never rises above "assists."</span></div>
-      <div class="finding reveal d2">Portfolio planning has no Governor.<span class="fnote">On the map: <em>management systems</em> show a Steward assisting, but the "Governs" column is empty. The Governor that would own portfolio decisions — what to prioritize, fund, or drop — is missing entirely.</span></div>
+      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, while the only Oracle barely assists on <em>suppliers</em>. In its current state the tooling is good at making things; little of it is yet pointed at watching what's ahead. That watching may still happen — just in people's heads and conversations, not in the system.</span></div>
+      <div class="finding reveal d1">Communications run on their own; research hasn't been handed over.<span class="fnote">On the map: the Messenger handles <em>information systems</em> almost independently, while the looking-ahead work sits with no agent — the Oracle never rises above "assists." Research still gets done; it's just done by hand rather than delegated.</span></div>
+      <div class="finding reveal d2">Portfolio planning has no Governor.<span class="fnote">On the map: <em>management systems</em> show a Steward assisting, but the "Governs" column is empty. No agent yet holds decision rights over the portfolio — what to prioritize, fund, or drop. Those calls still sit with people; the system simply doesn't represent them.</span></div>
     </div>
     <div class="col prose">
       <p class="reveal">One view shows where agency exists, where it's missing, where humans remain essential — and where the next being should be summoned. Most AI conversations start with "what agents should we build?" The better question is the one an operations leader would ask: <strong>how should the operating model evolve when agency becomes distributable?</strong></p>
@@ -824,10 +863,10 @@
   </div>
 </section>
 
-<!-- ———————————————— XI · CLOSE ———————————————— -->
-<section id="close" data-chapter="XI · The Powers We Grant">
+<!-- ———————————————— XII · CLOSE ———————————————— -->
+<section id="close" data-chapter="XII · The Powers We Grant">
   <div class="col prose" style="text-align:left">
-    <div class="eyebrow reveal">Chapter XI</div>
+    <div class="eyebrow reveal">Chapter XII</div>
     <h2 class="reveal">The powers we choose to grant.</h2>
     <p class="lede reveal">Four layers, one language: a cosmology, a pantheon, a system of powers, and the governance that holds them. We've now walked all four — from a being that only obeys to one that governs a whole domain.</p>
   </div>
@@ -912,12 +951,22 @@
   }
   function updateChain() {
     if (!chain) return;
+    var total = chain.offsetHeight - window.innerHeight;
+    if (total <= 0) { setStage(0); return; }
     var r = chain.getBoundingClientRect();
-    var total = r.height - window.innerHeight;
     var progress = Math.min(1, Math.max(0, -r.top / total));
     setStage(Math.min(4, Math.floor(progress * 5)));
   }
-  nodes.forEach(function (n) { n.addEventListener('click', function () { setStage(+n.dataset.i); }); });
+  nodes.forEach(function (n) {
+    n.addEventListener('click', function () {
+      var i = +n.dataset.i;
+      var total = chain.offsetHeight - window.innerHeight;
+      if (total <= 0) { setStage(i); return; }
+      var p = (i + 0.5) / 5;            /* aim for the middle of stage i's scroll band */
+      window.scrollTo({ top: chain.offsetTop + p * total, behavior: 'smooth' });
+    });
+  });
+  nodes.forEach(function (n) { n.style.cursor = 'pointer'; });
 
   /* Progress bar + parallax */
   var bar = document.getElementById('progress');
