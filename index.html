@@ -339,7 +339,7 @@
   }
   .spectrum span b { color: var(--gold); font-weight: 600; margin-right: 5px; }
 
-  .map { margin: 7vh 0 3vh; background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 38px 34px; box-shadow: 0 16px 48px rgba(35,40,59,.06); overflow-x: auto; }
+  .map { margin: 7vh 0 3vh; background: var(--card); border: 1px solid var(--hairline); border-radius: 16px; padding: 38px 34px; box-shadow: 0 16px 48px rgba(35,40,59,.06); overflow: visible; }
   .map-title { font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 26px; display: flex; align-items: center; gap: 12px; }
   .map-title::after { content: ""; height: 1px; flex: 1; background: var(--hairline); }
   .map-grid { display: grid; grid-template-columns: 170px repeat(6, 1fr); gap: 8px; min-width: 640px; }
@@ -358,11 +358,28 @@
     box-shadow: 0 4px 12px rgba(168,130,31,.18);
   }
   .map-grid .cell .being.missing { border-style: dashed; color: var(--muted); border-color: var(--muted); opacity: .65; }
+  /* accessible hover/focus explainers on each being */
+  .map-grid .cell .being { cursor: help; }
+  .map-grid .cell .being:hover, .map-grid .cell .being:focus, .map-grid .cell .being:focus-visible { z-index: 6; outline: none; }
+  .map-grid .cell .being:focus-visible { box-shadow: 0 0 0 3px var(--gold-faint), 0 4px 12px rgba(168,130,31,.18); }
+  .being .tip {
+    position: absolute; bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(4px);
+    width: 216px; background: var(--card); color: var(--ink-soft); border: 1px solid var(--hairline);
+    border-radius: 10px; padding: 11px 13px; font-family: var(--sans); font-style: normal; font-weight: 400;
+    font-size: 12px; line-height: 1.5; letter-spacing: .01em; text-align: left;
+    box-shadow: 0 12px 30px rgba(35,40,59,.18); opacity: 0; pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease; z-index: 7;
+  }
+  .being .tip b { display: block; font-family: var(--serif); font-style: italic; color: var(--ink); font-size: 14px; margin-bottom: 3px; }
+  .being .tip::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--card); }
+  .being:hover .tip, .being:focus .tip, .being:focus-visible .tip { opacity: 1; transform: translateX(-50%) translateY(0); }
   .map-legend { display: flex; gap: 26px; margin-top: 22px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
   .map-legend span { display: flex; align-items: center; gap: 8px; }
   .map-legend .key { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--gold); display: inline-block; }
   .map-legend .key.dash { border-style: dashed; border-color: var(--muted); }
   .map-legend .key.sq { border-radius: 5px; border: none; background: var(--indigo-faint); }
+  .map-key { margin-top: 12px; font-size: 11.5px; color: var(--muted); letter-spacing: .02em; line-height: 1.8; }
+  .map-key b { color: var(--gold); font-family: var(--serif); font-style: italic; font-weight: 500; }
 
   .findings { display: flex; flex-direction: column; gap: 14px; margin: 5vh auto; max-width: 640px; }
   .finding {
@@ -396,6 +413,7 @@
     .magic-grid { grid-template-columns: repeat(2, 1fr); }
     .magic-cluster .magic-grid { grid-template-columns: repeat(2, 1fr); }
     .compound .breakdown { grid-template-columns: 1fr; gap: 12px; }
+    .map { overflow-x: auto; }
     .arche-grid { grid-template-columns: 1fr; }
     .problems { grid-template-columns: repeat(2, 1fr); }
     .pairs { grid-template-columns: 1fr; }
@@ -679,7 +697,7 @@
   </div>
   <div class="compounds">
     <div class="compound reveal">
-      <div class="ctitle"><span class="who">The inbox agent</span><span class="rung">the Angel · rung 3</span><span class="spells">Divination <i>✦</i> Chronomancy <i>✦</i> Teleportation</span></div>
+      <div class="ctitle"><span class="who">The inbox agent</span><span class="rung">the Angel · rung 3</span></div>
       <div class="breakdown">
         <div><b>Divination</b>Reads the flow of incoming mail and senses what matters before you ask.</div>
         <div><b>Chronomancy</b>Orders your time — what's urgent, what can wait, what to surface and when.</div>
@@ -688,7 +706,7 @@
       <p class="note reveal">Notice what it's <em>not</em> granted: no Conjuration, no Dominion. It can sort and route, but it shouldn't be writing and sending in your name unwatched. Mythology is full of messengers who took one liberty too many.</p>
     </div>
     <div class="compound reveal">
-      <div class="ctitle"><span class="who">The research assistant</span><span class="rung">the Demigod · rung 4</span><span class="spells">Divination <i>✦</i> Summoning <i>✦</i> Transmutation</span></div>
+      <div class="ctitle"><span class="who">The research assistant</span><span class="rung">the Demigod · rung 4</span></div>
       <div class="breakdown">
         <div><b>Divination</b>Searches the field and watches for what's new or relevant.</div>
         <div><b>Summoning</b>Calls up sub-agents to chase several threads at once.</div>
@@ -697,7 +715,7 @@
       <p class="note reveal">Summoning is the power to make more beings — the one that makes all the others recursive. Granted lightly, one assistant quietly becomes a crowd. Nearly every tradition that let its creations create again kept a story about it getting away from them.</p>
     </div>
     <div class="compound reveal">
-      <div class="ctitle"><span class="who">The design copilot</span><span class="rung">the Familiar · rung 2</span><span class="spells">Transmutation <i>✦</i> Illusion <i>✦</i> Conjuration</span></div>
+      <div class="ctitle"><span class="who">The design copilot</span><span class="rung">the Familiar · rung 2</span></div>
       <div class="breakdown">
         <div><b>Transmutation</b>Reworks an idea from one form to another — words to layout, sketch to spec.</div>
         <div><b>Illusion</b>Shapes appearance — mockups, visualizations, the look of a thing.</div>
@@ -853,29 +871,30 @@
         <div class="corner"></div>
         <div class="mhead">0<br>Human</div><div class="mhead">1<br>Assists</div><div class="mhead">2<br>Recommends</div><div class="mhead">3<br>Approval</div><div class="mhead">4<br>Independent</div><div class="mhead">5<br>Governs</div>
         <div class="mrow">Suppliers</div>
-        <div class="cell fill"></div><div class="cell fill"><div class="being" title="Oracle">O</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Oracle — watcher of the horizon; sees what's coming: markets, trends, risks, openings."><span class="tip" aria-hidden="true"><b>Oracle</b>Watcher of the horizon — sees what's coming: markets, trends, risks, openings.</span>O</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Locations</div>
-        <div class="cell fill"><div class="being" title="Steward">S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"><div class="being" tabindex="0" aria-label="Steward — tender of the scarce things: time, attention, budget."><span class="tip" aria-hidden="true"><b>Steward</b>Tender of the scarce things — time, attention, budget, so nothing burns out.</span>S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Value delivery chain</div>
-        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" title="Builder">B</div></div><div class="cell"><div class="being missing" title="Missing: Alchemist">?</div></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Builder — maker of artifacts: documents, decks, prototypes, code."><span class="tip" aria-hidden="true"><b>Builder</b>Maker of artifacts — documents, decks, prototypes, code.</span>B</div></div><div class="cell"><div class="being missing" tabindex="0" aria-label="A missing being — room to extend agency on the value delivery chain that no agent fills yet."><span class="tip" aria-hidden="true"><b>A missing being</b>Room to extend agency here that no agent fills yet — a candidate to summon next.</span>?</div></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Org structure</div>
-        <div class="cell fill"><div class="being" title="Human-led">H</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"><div class="being" tabindex="0" aria-label="Human-led — no agent here yet; a person still owns this."><span class="tip" aria-hidden="true"><b>Human-led</b>No agent here yet — a person still owns this.</span>H</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Information systems</div>
-        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" title="Archivist">A</div></div><div class="cell"><div class="being" title="Messenger">M</div></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Archivist — keeper of what's known; holds memory and returns it on cue."><span class="tip" aria-hidden="true"><b>Archivist</b>Keeper of what's known — holds memory and returns it the moment it's needed.</span>A</div></div><div class="cell"><div class="being" tabindex="0" aria-label="Messenger — carrier of the word; moves communication where it needs to go."><span class="tip" aria-hidden="true"><b>Messenger</b>Carrier of the word — moves communication where it needs to go.</span>M</div></div><div class="cell"></div>
         <div class="mrow">Management systems</div>
-        <div class="cell fill"></div><div class="cell fill"><div class="being" title="Steward">S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="being missing" title="Missing: Governor">?</div></div>
+        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Steward — tender of the scarce things: time, attention, budget."><span class="tip" aria-hidden="true"><b>Steward</b>Tender of the scarce things — time, attention, budget, so nothing burns out.</span>S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="being missing" tabindex="0" aria-label="A missing Governor — no agent holds decision rights over the portfolio yet."><span class="tip" aria-hidden="true"><b>A missing Governor</b>No agent holds decision rights over the portfolio yet — what to prioritize, fund, or drop.</span>?</div></div>
       </div>
       <div class="map-legend">
-        <span><span class="key"></span> Being in place (O Oracle, M Messenger, A Archivist, B Builder, S Steward)</span>
+        <span><span class="key"></span> Being in place</span>
         <span><span class="key dash"></span> Being missing</span>
         <span><span class="key sq"></span> Current extent of delegation</span>
       </div>
+      <div class="map-key"><b>O</b> Oracle · <b>M</b> Messenger · <b>A</b> Archivist · <b>B</b> Builder · <b>S</b> Steward · <b>H</b> human-led (no agent yet). Hover or focus any marker for what it does.</div>
     </div>
     <div class="col prose">
       <p class="reveal" style="text-align:center; margin:0 auto;">Read across the rows and three things stand out. Each describes the <em>AI layer</em> — what's been handed to agents and what hasn't — not the people, who may well cover these gaps off-map:</p>
     </div>
     <div class="findings">
-      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, while the only Oracle barely assists on <em>suppliers</em>. In its current state the tooling is good at making things; little of it is yet pointed at watching what's ahead. That watching may still happen — just in people's heads and conversations, not in the system.</span></div>
+      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, while the only Oracle barely assists on <em>suppliers</em>. In its current state the tooling is good at making things; little of it is yet pointed at watching what's ahead. That watching may still happen — in team members' minds and conversations, not in the system.</span></div>
       <div class="finding reveal d1">Communications run on their own; research hasn't been handed over.<span class="fnote">On the map: the Messenger handles <em>information systems</em> almost independently, while the looking-ahead work sits with no agent — the Oracle never rises above "assists." Research still gets done; it's just done by hand rather than delegated.</span></div>
       <div class="finding reveal d2">Portfolio planning has no Governor.<span class="fnote">On the map: <em>management systems</em> show a Steward assisting, but the "Governs" column is empty. No agent yet holds decision rights over the portfolio — what to prioritize, fund, or drop. Those calls still sit with people; the system simply doesn't represent them.</span></div>
     </div>
