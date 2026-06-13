@@ -167,6 +167,16 @@
     padding: 18px 16px; text-align: center; font-size: 14px; font-weight: 500; color: var(--ink-soft);
   }
   .chip::before { content: "✦"; display: block; font-size: 9px; color: var(--gold-bright); margin-bottom: 8px; }
+  /* ——— Ch III: recurring themes ledger ——— */
+  .themes { margin: 5vh auto 4vh; max-width: 860px; width: 100%; }
+  .theme { padding: 20px 0; border-top: 1px solid var(--gold-faint); }
+  .theme:last-child { border-bottom: 1px solid var(--gold-faint); }
+  .t-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 9px; }
+  .t-name { font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--ink); }
+  .t-name::before { content: "✦"; color: var(--gold-bright); font-size: 11px; margin-right: 10px; vertical-align: 2px; }
+  .t-gloss { color: var(--ink-soft); font-size: 14.5px; }
+  .t-proof { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+  .t-proof i { font-style: italic; color: var(--ink-soft); }
 
   /* ——— Interstitial full-screen moments ——— */
   .interstitial {
@@ -480,24 +490,33 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter III</div>
     <h2 class="reveal">It turns out we have one. It's just very old.</h2>
-    <p class="lede reveal">Greek, Norse, Hindu, Egyptian, Yoruba, Maya, Chinese, Aboriginal Australian, Abrahamic — traditions on every continent spent millennia reasoning about societies of beings with varying powers and varying independence. Set them side by side and the same handful of concerns keeps surfacing:</p>
+    <p class="lede reveal">Greek, Norse, Hindu, Egyptian, Yoruba, Maya, Chinese, Aboriginal Australian, Abrahamic — traditions on every continent spent millennia reasoning about societies of beings with varying powers and varying independence. Look across myths from different peoples and different ages, and the same themes keep recurring. Five sit close to the heart of agent design:</p>
   </div>
   <div class="wrap">
-    <div class="problems">
-      <div class="chip reveal">Delegated power</div>
-      <div class="chip reveal d1">Autonomy</div>
-      <div class="chip reveal d2">Hierarchies of beings</div>
-      <div class="chip reveal d3">Specialization</div>
-      <div class="chip reveal">Constraints</div>
-      <div class="chip reveal d1">Alignment</div>
-      <div class="chip reveal d2">Corruption</div>
-      <div class="chip reveal d3">Coordination</div>
+    <div class="themes">
+      <div class="theme reveal">
+        <div class="t-head"><span class="t-name">Delegated power</span><span class="t-gloss">a greater being hands a lesser one the authority to act in its name</span></div>
+        <div class="t-proof">Hermes, herald of Zeus, carrying the gods' commands <i>(Greek)</i> · the angel Gabriel bearing messages from God <i>(Abrahamic)</i> · the Golem of Prague, animated to obey its rabbi's written word <i>(Jewish folklore)</i></div>
+      </div>
+      <div class="theme reveal">
+        <div class="t-head"><span class="t-name">Hierarchy &amp; specialization</span><span class="t-gloss">beings ranked into orders, each charged with its own domain</span></div>
+        <div class="t-proof">Zeus, Poseidon, and Hades dividing sky, sea, and underworld by lot <i>(Greek)</i> · the nine choirs of angels, seraphim down to messengers <i>(Christian tradition)</i> · the Trimurti — Brahma creates, Vishnu preserves, Shiva destroys <i>(Hindu)</i></div>
+      </div>
+      <div class="theme reveal">
+        <div class="t-head"><span class="t-name">Constraints &amp; binding</span><span class="t-gloss">power held in check by oath, name, or rule</span></div>
+        <div class="t-proof">The gods bound by the unbreakable oath sworn on the river Styx <i>(Greek)</i> · jinn compelled to serve whoever holds the lamp <i>(One Thousand and One Nights)</i> · Solomon commanding spirits only through his sealed ring <i>(Testament of Solomon)</i></div>
+      </div>
+      <div class="theme reveal">
+        <div class="t-head"><span class="t-name">Autonomy &amp; overreach</span><span class="t-gloss">the empowered thing that acts on its own and can't be recalled</span></div>
+        <div class="t-proof">The sorcerer's apprentice, whose enchanted broom won't stop hauling water <i>(Lucian; later Goethe)</i> · Pandora's jar, opened once and never closed again <i>(Greek)</i> · Icarus, who ignored the one instruction and flew too high <i>(Greek)</i></div>
+      </div>
+      <div class="theme reveal">
+        <div class="t-head"><span class="t-name">Rebellion &amp; corruption</span><span class="t-gloss">the trusted being that turns against its maker</span></div>
+        <div class="t-proof">Lucifer, the angel who fell <i>(Judeo-Christian tradition)</i> · Iblis, who refused to bow <i>(Qur'an)</i> · Loki, whose scheming brought about the death of Baldr <i>(Norse)</i></div>
+      </div>
     </div>
   </div>
-  <div class="col prose">
-    <p class="reveal">The record runs deep. The oldest myths we can still read — pressed into Sumerian clay — are more than four thousand years old, and researchers have argued that some Aboriginal Australian oral traditions describe coastline changes from the end of the last ice age, seven thousand years back or more. Each of these has been turned over for a very long time — and each is a live question in agent design today.</p>
-  </div>
-  <blockquote class="pullquote reveal">Across four thousand years, myth has been one of the most enduring ways humans reason about intelligences beyond our own — what they can do, how freely they act, and what we dare to grant them.</blockquote>
+  <blockquote class="pullquote reveal">Across four thousand years, myth has been one of the most enduring ways humans reason about intelligences beyond our own — what they can do, how freely they act, and what the risks of great power can be.</blockquote>
 </section>
 
 <!-- ———————————————— IV · FOUR LAYERS ———————————————— -->
