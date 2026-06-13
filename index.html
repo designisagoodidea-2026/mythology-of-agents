@@ -93,19 +93,6 @@
   @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(7vw, 9vh) scale(1.16); } }
   @keyframes drift2 { from { transform: translate(0,0) scale(1.06); } to { transform: translate(-6vw, -7vh) scale(.9); } }
   @keyframes drift3 { from { transform: translate(0,0) scale(.95); } to { transform: translate(5vw, -6vh) scale(1.12); } }
-  /* ——— Celestial: occasional shooting star ——— */
-  .shooting-star {
-    position: fixed; top: 11%; left: 72%; z-index: 0; pointer-events: none;
-    width: 140px; height: 1.5px; opacity: 0; border-radius: 2px;
-    background: linear-gradient(90deg, transparent, rgba(201,162,59,.9));
-    transform: rotate(20deg); animation: shoot 17s ease-in 6s infinite;
-  }
-  @keyframes shoot {
-    0% { opacity: 0; transform: translate(0,0) rotate(20deg); }
-    2% { opacity: .85; }
-    8% { opacity: 0; transform: translate(-420px, 150px) rotate(20deg); }
-    100% { opacity: 0; transform: translate(-420px, 150px) rotate(20deg); }
-  }
 
   /* ——— Layout primitives ——— */
   main { position: relative; z-index: 1; }
@@ -164,15 +151,7 @@
     font-family: var(--serif); font-weight: 300; letter-spacing: -0.015em;
     font-size: clamp(46px, 8.4vw, 104px); line-height: 1.04; max-width: 900px;
   }
-  #hero h1 em {
-    font-style: italic; font-weight: 400; color: var(--gold);
-    background: linear-gradient(100deg, var(--gold) 22%, var(--gold-bright) 40%, #F3E2A8 50%, var(--gold-bright) 60%, var(--gold) 78%);
-    background-size: 240% 100%;
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: sheen 7s ease-in-out 1.4s infinite;
-  }
-  @keyframes sheen { 0% { background-position: 135% 0; } 55%, 100% { background-position: -35% 0; } }
+  #hero h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
   #hero .sub {
     margin-top: 34px; max-width: 560px; color: var(--ink-soft); font-size: 18px; line-height: 1.6;
   }
@@ -492,8 +471,6 @@
     .star-dot { animation: none; opacity: .3; }
     .scroll-cue { animation: none; }
     #aurora span { animation: none; }
-    .shooting-star { display: none; }
-    #hero h1 em { animation: none; background: none; -webkit-text-fill-color: var(--gold); }
     html { scroll-behavior: auto; }
   }
 </style>
@@ -504,7 +481,6 @@
 <div id="chapter-marker"><span class="star">✦</span><span id="chapter-label"></span></div>
 <div id="aurora"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
 <div id="starfield"></div>
-<div class="shooting-star" aria-hidden="true"></div>
 
 <main>
 
@@ -1020,6 +996,55 @@
     }
   }
 
+  /* Constellations as vignette — denser around the perimeter, open in the center */
+  if (field) {
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    var patterns = [
+      [[8,22],[34,10],[60,30],[80,16]],
+      [[6,40],[26,60],[46,30],[66,58],[86,34]],
+      [[10,18],[32,26],[54,20],[72,40],[58,62],[36,56]],
+      [[12,50],[40,42],[68,56],[90,38]],
+      [[10,30],[30,12],[50,34],[72,18],[88,40]],
+      [[14,14],[14,42],[40,54],[66,42],[66,14]]
+    ];
+    function edgePos() {
+      for (var t = 0; t < 24; t++) {
+        var x = Math.random() * 92, y = 2 + Math.random() * 88;
+        if (x < 22 || x > 74 || y < 20 || y > 76) return [x, y];   /* keep to the outer frame */
+      }
+      return [Math.random() < 0.5 ? 4 : 84, Math.random() * 88];
+    }
+    var cfield = document.createElement('div');
+    cfield.style.cssText = 'position:absolute;inset:0;pointer-events:none;';
+    for (var k = 0; k < 18; k++) {
+      var pat = patterns[Math.floor(Math.random() * patterns.length)];
+      var pos = edgePos();
+      var edginess = Math.max(Math.abs(pos[0] - 48) / 48, Math.abs(pos[1] - 48) / 52); /* 0 center -> ~1 edge */
+      var w = 120 + Math.random() * 90;
+      var svg = document.createElementNS(SVGNS, 'svg');
+      svg.setAttribute('width', w); svg.setAttribute('height', w * 0.66);
+      svg.setAttribute('viewBox', '0 0 100 66');
+      var rot = (Math.random() * 44 - 22).toFixed(1);
+      var flip = Math.random() < 0.5 ? -1 : 1;
+      svg.style.cssText = 'position:absolute;left:' + pos[0].toFixed(1) + '%;top:' + pos[1].toFixed(1) + '%;opacity:' + (0.12 + edginess * 0.16 + Math.random() * 0.06).toFixed(2) + ';overflow:visible;transform:rotate(' + rot + 'deg) scaleX(' + flip + ');';
+      var pl = document.createElementNS(SVGNS, 'polyline');
+      pl.setAttribute('points', pat.map(function (p) { return p[0] + ',' + p[1]; }).join(' '));
+      pl.setAttribute('fill', 'none');
+      pl.setAttribute('stroke', '#C9A23B');
+      pl.setAttribute('stroke-width', '0.4');
+      pl.setAttribute('stroke-linejoin', 'round');
+      svg.appendChild(pl);
+      pat.forEach(function (p) {
+        var c = document.createElementNS(SVGNS, 'circle');
+        c.setAttribute('cx', p[0]); c.setAttribute('cy', p[1]); c.setAttribute('r', '1.1');
+        c.setAttribute('fill', '#C9A23B');
+        svg.appendChild(c);
+      });
+      cfield.appendChild(svg);
+    }
+    field.appendChild(cfield);
+  }
+
   /* Reveal on scroll */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
@@ -1099,6 +1124,9 @@
       bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
       if (!reduced) {
         layers.forEach(function (l) { l.el.style.transform = 'translateY(' + (-window.scrollY * l.speed) + 'px)'; });
+      }
+      if (cfield) {
+        cfield.style.opacity = Math.max(0, Math.min(1, 1 - window.scrollY / (window.innerHeight * 0.7)));
       }
       updateChain();
       updateChapter();
