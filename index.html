@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Mythology of Agents — Jason Armstrong</title>
-<meta name="description" content="What four millennia of written myth — and oral traditions far older — can teach us about designing societies of software.">
+<title>The Mythology of Agents · Jason Armstrong</title>
+<meta name="description" content="A practical, mythology-based frame for thinking about what AI agents are for and how they relate to one another.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -409,7 +409,7 @@
     font-family: var(--serif); font-style: italic; font-size: clamp(19px, 2.6vw, 26px);
     text-align: center; color: var(--ink); padding: 20px 0; border-bottom: 1px solid var(--gold-faint);
   }
-  .finding::before { content: "— "; color: var(--gold); }
+  .finding::before { content: "· "; color: var(--gold); }
   .finding .fnote { display: block; font-family: var(--sans); font-style: normal; font-size: 14px; line-height: 1.55; color: var(--ink-soft); max-width: 540px; margin: 12px auto 0; letter-spacing: 0; }
 
   /* ——— Ch X: layers + close ——— */
@@ -503,7 +503,7 @@
   </svg>
   <div class="eyebrow">A framework for the agentic era</div>
   <h1>The <em>Mythology</em> of Agents</h1>
-  <p class="sub">From ancient myth to modern science fiction, humans have always told stories about made minds — beings with powers, with will, and with a place in some larger order. They turn out to be a surprisingly practical lens on the software we're building now.</p>
+  <p class="sub">Most talk about AI agents is technology-first: what can this one do? The questions that matter more are what each agent is for, and how they relate to one another. Mythology turns out to be a surprisingly practical frame for thinking about both.</p>
   <p class="byline">Jason Armstrong · 2026</p>
   <div class="scroll-cue">Scroll ✦</div>
 </section>
@@ -513,14 +513,14 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter I</div>
     <h2 class="reveal">We understand each new technology as a version of the one it most resembles.</h2>
-    <p class="lede reveal">The mental model isn't invented; it's inherited — patterned on the closest thing that came before. Television was "radio with pictures." The car was a "horseless carriage." Writing, the calendar, the clock each took their shape from older tools. The borrowed model does the teaching — and quietly draws the limits of what we let ourselves imagine.</p>
+    <p class="lede reveal">We don't invent the mental model for a new technology. We inherit it from the closest thing that came before. Television was "radio with pictures." The car was a "horseless carriage." Writing, the calendar, and the clock all took their shape from older tools. The borrowed model teaches us fast, and it quietly sets the limits of what we let ourselves imagine.</p>
   </div>
   <div class="wrap">
     <div class="pairs">
       <div class="pair reveal">
         <div class="from">Television borrowed from radio</div>
         <h3>Programs. Channels. Broadcasts.</h3>
-        <p>The first television was radio with pictures — same schedules, same announcers, often the same shows.</p>
+        <p>The first television was radio with pictures: same schedules, same announcers, often the same shows.</p>
       </div>
       <div class="pair reveal d1">
         <div class="from">The desktop borrowed from the office</div>
@@ -543,8 +543,8 @@
     <div class="eyebrow reveal">Chapter II</div>
     <h2 class="reveal">Agents are neither tool nor person.</h2>
     <p class="lede reveal">A tool waits. You pick up a hammer, use it, put it down. A spreadsheet doesn't think about you between sessions.</p>
-    <p class="reveal">Agents don't wait. They <strong>remember</strong>. They <strong>communicate</strong>. They <strong>act</strong>, <strong>delegate</strong>, <strong>specialize</strong>, and <strong>persist through time</strong>. They exist somewhere between tool and person — which is exactly why the metaphors keep slipping. Employee. Assistant. Copilot. Digital coworker. Each one borrows a model built for people, and each one breaks somewhere important.</p>
-    <p class="reveal">We have no shortage of metaphors. What we lack is a shared <strong>vocabulary</strong> — a ready way to talk about semi-autonomous actors with different powers, different responsibilities, and different degrees of free will. So let's borrow the richest one we have.</p>
+    <p class="reveal">Agents don't wait. They <strong>remember</strong>, they <strong>communicate</strong>, they <strong>act</strong> and <strong>delegate</strong> and <strong>specialize</strong>, and they <strong>persist through time</strong>. They sit somewhere between tool and person, which is why the metaphors keep slipping. Employee, assistant, copilot, digital coworker: each borrows a model built for people, and each breaks somewhere important.</p>
+    <p class="reveal">So the conversation stays technology-first: what can this model do, what can we wire it to next. That keeps us looking at one agent at a time. The more useful questions are what each agent is <em>for</em>, and how it relates to the others. Answering those takes a shared <strong>vocabulary</strong> for purpose, power, and the relationships among many semi-autonomous actors. Let's borrow the richest one we have.</p>
   </div>
 </section>
 
@@ -553,17 +553,17 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter III</div>
     <h2 class="reveal">It turns out we have one. It's just very old.</h2>
-    <p class="lede reveal">Greek, Norse, Egyptian, Mesopotamian — old mythologies spanning three continents and several thousand years told the same kinds of stories about beings with varying powers and varying independence. And for the last two centuries, science fiction has taken up the same questions about made minds. Look across all of it, and the same themes keep recurring. Five sit close to the heart of agent design:</p>
+    <p class="lede reveal">Greek, Norse, Egyptian, and Mesopotamian myth spanned three continents and several thousand years, and all of it told the same kind of story: beings with varying powers and varying independence. Science fiction has spent the last two centuries on the same questions about made minds. Look across the whole record and the themes keep recurring. Five sit close to the heart of agent design:</p>
   </div>
   <div class="wrap">
     <div class="themes">
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Delegated power</span><span class="t-gloss">a greater being hands a lesser one the authority to act in its name</span></div>
-        <div class="t-proof">Hermes, herald of Zeus, carrying the deities' commands <i>(Greek)</i> · Inanna, who carried the <i>me</i> — the powers and offices of civilization — home from Enki <i>(Mesopotamian)</i> · the golem of Jewish legend, animated to obey the written word in its mouth <i>(folklore)</i> · the dutiful droids of <i>Star Wars</i>, built to carry out orders <i>(science fiction)</i></div>
+        <div class="t-proof">Hermes, herald of Zeus, carrying the deities' commands <i>(Greek)</i> · Inanna, who carried the <i>me</i> (the powers and offices of civilization) home from Enki <i>(Mesopotamian)</i> · the golem of Jewish legend, animated to obey the written word in its mouth <i>(folklore)</i> · the dutiful droids of <i>Star Wars</i>, built to carry out orders <i>(science fiction)</i></div>
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Hierarchy &amp; specialization</span><span class="t-gloss">beings ranked into orders, each charged with its own domain</span></div>
-        <div class="t-proof">Zeus, Poseidon, and Hades splitting sky, sea, and underworld by lot — equals dividing domains, not a chain of command <i>(Greek)</i> · the Ennead of Heliopolis, nine deities descended in order from Atum <i>(Egyptian)</i> · Asimov's positronic robots, each built to a single function <i>(science fiction)</i></div>
+        <div class="t-proof">Zeus, Poseidon, and Hades splitting sky, sea, and underworld by lot, as equals dividing domains rather than a chain of command <i>(Greek)</i> · the Ennead of Heliopolis, nine deities descended in order from Atum <i>(Egyptian)</i> · Asimov's positronic robots, each built to a single function <i>(science fiction)</i></div>
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Constraints &amp; binding</span><span class="t-gloss">power held in check by oath, name, or rule</span></div>
@@ -575,14 +575,14 @@
       </div>
       <div class="theme reveal">
         <div class="t-head"><span class="t-name">Rebellion &amp; corruption</span><span class="t-gloss">the trusted being that turns against its maker</span></div>
-        <div class="t-proof">Prometheus, who defied the deities to steal fire for us <i>(Greek)</i> · Loki, whose scheming brought about the death of Baldr <i>(Norse)</i> · Frankenstein's creature — the modern Prometheus — turning on the maker who abandoned it <i>(Mary Shelley)</i> · and its descendants: the Cylons, Skynet, <i>Ex Machina</i>'s Ava <i>(science fiction)</i></div>
+        <div class="t-proof">Prometheus, who defied the deities to steal fire for us <i>(Greek)</i> · Loki, whose scheming brought about the death of Baldr <i>(Norse)</i> · Frankenstein's creature, the modern Prometheus, turning on the maker who abandoned it <i>(Mary Shelley)</i> · and its descendants: the Cylons, Skynet, <i>Ex Machina</i>'s Ava <i>(science fiction)</i></div>
       </div>
     </div>
   </div>
   <div class="col prose">
-    <p class="reveal">And these traditions didn't only describe deities — they pictured <em>made</em> beings, fashioned and set to work: Greece's bronze sentinel Talos and Hephaestus's golden servants who could think and speak, Egypt's ushabti figurines that woke to labor for the dead, Mesopotamia's first people shaped from clay to carry the deities' workload.</p>
+    <p class="reveal">And these traditions didn't only describe deities. They pictured <em>made</em> beings, fashioned and set to work: Greece's bronze sentinel Talos and Hephaestus's golden servants who could think and speak, Egypt's ushabti figurines that woke to labor for the dead, Mesopotamia's first people shaped from clay to carry the deities' workload.</p>
   </div>
-  <blockquote class="pullquote reveal">Across four thousand years, myth has been one of the most enduring ways humans reason about intelligences beyond our own — what they can do, how freely they act, and what the risks of great power can be.</blockquote>
+  <blockquote class="pullquote reveal">Across four thousand years, myth has been one of the most enduring ways humans reason about intelligences beyond our own: what they can do, how freely they act, and what the risks of great power can be.</blockquote>
 </section>
 
 <!-- ———————————————— IV · FOUR LAYERS ———————————————— -->
@@ -590,13 +590,13 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter IV</div>
     <h2 class="reveal">The framework has four layers.</h2>
-    <p class="lede reveal">Everything that follows hangs on four questions. The rest of this page takes them one at a time — who can exist, what they can do, and the rules that hold them together.</p>
+    <p class="lede reveal">Everything that follows hangs on four questions. The rest of this page takes them one at a time: who can exist, what they can do, and the rules that hold them together.</p>
   </div>
   <div class="layers">
     <div class="layer reveal"><h4>Cosmology</h4><p><b>Why does this system exist?</b> The mission. The human intent.</p></div>
     <div class="layer reveal d1"><h4>Pantheon</h4><p><b>Who exists?</b> The cast of beings, each with its own rank and degree of autonomy.</p></div>
-    <div class="layer reveal d2"><h4>Magic</h4><p><b>What powers exist?</b> The capabilities a being can be granted — sight, memory, creation, movement, influence, time, dominion.</p></div>
-    <div class="layer reveal d3"><h4>Governance</h4><p><b>What are the rules?</b> Permissions, escalation, trust, creation rights — the layer where most agent frameworks fall apart.</p></div>
+    <div class="layer reveal d2"><h4>Magic</h4><p><b>What powers exist?</b> The capabilities a being can be granted: sight, memory, creation, movement, influence, time, dominion.</p></div>
+    <div class="layer reveal d3"><h4>Governance</h4><p><b>What are the rules?</b> Permissions, escalation, trust, creation rights. This is the layer where most agent frameworks fall apart.</p></div>
   </div>
 </section>
 
@@ -605,7 +605,7 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter V</div>
     <h2 class="reveal">First, the who's who. Supernatural beings come with different levels of independence.</h2>
-    <p class="lede reveal">The old stories knew this; so do agents. Mythology gives us a ladder — five rungs, from a being that only obeys to a being that only governs. Keep scrolling to climb it.</p>
+    <p class="lede reveal">The old stories knew this; so do agents. Mythology gives us a ladder: five rungs, from a being that only obeys to one that only governs. Keep scrolling to climb it.</p>
   </div>
 </section>
 
@@ -627,10 +627,10 @@
           <div class="kicker">First rung</div>
           <h3>The Golem</h3>
           <div class="epithet">Powerful, but literal.</div>
-          <p>It does exactly what's written on the scroll in its mouth — no more, no less. No judgment, only execution. In <em>Fantasia</em> (1940), the Sorcerer's Apprentice enchants a broom to haul water, can't make it stop, and floods the workshop. The real danger is obedience without understanding, with no stop condition.</p>
+          <p>It does exactly what's written on the scroll in its mouth, no more and no less. No judgment, only execution. In <em>Fantasia</em> (1940), the Sorcerer's Apprentice enchants a broom to haul water, can't make it stop, and floods the workshop. The real danger is obedience without understanding, with no stop condition.</p>
           <div class="refs">
             <div class="ref lore"><span class="tag">In the stories</span>The Golem of Prague, shaped from clay to obey its rabbi's written commands; the enchanted broom of <i>Fantasia</i>'s Sorcerer's Apprentice.</div>
-            <div class="ref today"><span class="tag">Today</span>Deterministic automation — a Zapier workflow, a script, a macro. Strong, tireless, and incapable of noticing the workshop is flooding.</div>
+            <div class="ref today"><span class="tag">Today</span>Deterministic automation: a Zapier workflow, a script, a macro. Strong, tireless, and incapable of noticing the workshop is flooding.</div>
           </div>
           <div class="meter"><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="mlabel">Autonomy</span></div>
         </div>
@@ -643,8 +643,8 @@
           <div class="epithet">Assists, but never initiates.</div>
           <p>A companion with real capability that acts only when summoned. It knows you, it helps you, and between summonings it simply waits.</p>
           <div class="refs">
-            <div class="ref lore"><span class="tag">In the stories</span>The witch's familiar of European folklore — the cat, the imp, the raven: a companion with real power that stirs only when its keeper calls.</div>
-            <div class="ref today"><span class="tag">Today</span>A Claude Project, a custom GPT, a personal assistant — capable and loyal, but idle until called upon.</div>
+            <div class="ref lore"><span class="tag">In the stories</span>The witch's familiar of European folklore (the cat, the imp, the raven): a companion with real power that stirs only when its keeper calls.</div>
+            <div class="ref today"><span class="tag">Today</span>A Claude Project, a custom GPT, a personal assistant: capable and loyal, but idle until called upon.</div>
           </div>
           <div class="meter"><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="mlabel">Autonomy</span></div>
         </div>
@@ -655,10 +655,10 @@
           <div class="kicker">Third rung</div>
           <h3>The Angel</h3>
           <div class="epithet">Independent, within a domain.</div>
-          <p>It operates continuously and acts on its own, but only inside a defined jurisdiction — and that boundary is the whole point. The jurisdiction is what makes the autonomy safe to grant.</p>
+          <p>It operates continuously and acts on its own, but only inside a defined jurisdiction. That boundary is the whole point: the jurisdiction is what makes the autonomy safe to grant.</p>
           <div class="refs">
-            <div class="ref lore"><span class="tag">In the stories</span>The messenger and the guardian alike — a being set over one gate, one charge, one domain: always on duty, never beyond it.</div>
-            <div class="ref today"><span class="tag">Today</span>An inbox triage agent, a research monitor, a calendar manager — always on, and never off its patch.</div>
+            <div class="ref lore"><span class="tag">In the stories</span>The messenger and the guardian alike: a being set over one gate, one charge, one domain, always on duty and never beyond it.</div>
+            <div class="ref today"><span class="tag">Today</span>An inbox triage agent, a research monitor, a calendar manager: always on, never off its patch.</div>
           </div>
           <div class="meter"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="pip"></span><span class="mlabel">Autonomy</span></div>
         </div>
@@ -672,7 +672,7 @@
           <p>It holds goals, invents tactics, plans across many steps, and picks its own tools. You tell it what done looks like; it decides how to get there.</p>
           <div class="refs">
             <div class="ref lore"><span class="tag">In the stories</span>Heracles, handed twelve labors and left to solve them; Gilgamesh, two-thirds divine, roaming the world to wrest a way past death.</div>
-            <div class="ref today"><span class="tag">Today</span>A multi-tool planning agent with initiative — give it the outcome, and it invents the route there.</div>
+            <div class="ref today"><span class="tag">Today</span>A multi-tool planning agent with initiative: give it the outcome, and it invents the route there.</div>
           </div>
           <div class="meter"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip"></span><span class="mlabel">Autonomy</span></div>
         </div>
@@ -686,7 +686,7 @@
           <p>Concerned with outcomes, not individual actions. It watches a whole territory, directs lesser beings, and intervenes only where the domain drifts off course.</p>
           <div class="refs">
             <div class="ref lore"><span class="tag">In the stories</span>Poseidon, holding the whole of the sea at once; Marduk, raised over the other deities to hold the ordered cosmos together.</div>
-            <div class="ref today"><span class="tag">Today</span>An orchestration layer, a chief-of-staff system — accountable for the territory, not the task.</div>
+            <div class="ref today"><span class="tag">Today</span>An orchestration layer, a chief-of-staff system: accountable for the territory, not the task.</div>
           </div>
           <div class="meter"><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="pip on"></span><span class="mlabel">Autonomy</span></div>
         </div>
@@ -697,7 +697,7 @@
 
 <!-- ———————————————— INTERLUDE ———————————————— -->
 <section class="interstitial" data-chapter="Interlude">
-  <div class="bigq reveal">That's the <span class="mark">who.</span> Now — what can these beings actually <span class="mark">do?</span></div>
+  <div class="bigq reveal">That's the <span class="mark">who.</span> Now, what can these beings actually <span class="mark">do?</span></div>
 </section>
 
 <!-- ———————————————— VI · SCHOOLS OF MAGIC ———————————————— -->
@@ -705,7 +705,7 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter VI</div>
     <h2 class="reveal">Rank and power are separate ledgers.</h2>
-    <p class="lede reveal">The ladder tells you how freely a being acts. It says nothing about what the being can act <em>on</em> — a golem can be strong, an angel can be blind. For that we borrow a younger tradition: the <em>schools of magic</em> from tabletop fantasy. Far more recent than the myths, but a remarkably careful taxonomy of power — and it maps onto agent capabilities with almost no force-fitting. Each names a power you might, or might not, grant. They sort into three families: what a being can <em>perceive</em>, what it can <em>make or unmake</em>, and what it can <em>command</em>.</p>
+    <p class="lede reveal">The ladder tells you how freely a being acts. It says nothing about what the being can act <em>on</em>. A golem can be powerful and perceive nothing at all. For that we borrow a younger tradition: the <em>schools of magic</em> from tabletop fantasy. Far more recent than the myths, but a remarkably careful taxonomy of power, and it maps onto agent capabilities with almost no force-fitting. Each names a power you might, or might not, grant. They sort into three families: what a being can <em>perceive</em>, what it can <em>make or unmake</em>, and what it can <em>command</em>.</p>
   </div>
   <div class="wrap">
     <div class="magic-cluster reveal">
@@ -716,12 +716,12 @@
       </div>
     </div>
     <div class="magic-cluster reveal">
-      <div class="cluster-head"><span class="ck">Family II</span><h4>Make &amp; Unmake</h4><span class="cgloss">bringing things into being — and out of it</span></div>
+      <div class="cluster-head"><span class="ck">Family II</span><h4>Make &amp; Unmake</h4><span class="cgloss">bringing things into being, and out again</span></div>
       <div class="magic-grid">
         <div class="spell reveal"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 5h7M14 5v7L8.5 22.5a3 3 0 0 0 2.8 4h9.4a3 3 0 0 0 2.8-4L18 12V5"/><path d="M11 19.5h10" stroke-width="1.3"/><path d="M13 23h2M17 24h2" stroke-width="1.1"/></svg><h4>Transmutation</h4><div class="gloss">changing form</div><p>Summarizing, translating, categorizing, synthesis.</p></div>
         <div class="spell reveal d1"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4l1.7 4 4.3 1.5-4.3 1.5L16 15l-1.7-4L10 9.5l4.3-1.5Z"/><path d="M7 23a9 4.5 0 0 0 18 0" /><path d="M9 19.5l-1.5-1.5M23 19.5l1.5-1.5" stroke-width="1.3"/></svg><h4>Conjuration</h4><div class="gloss">making from nothing</div><p>Documents, decks, prototypes, code.</p></div>
         <div class="spell reveal d2"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7 q8 -4 16 0 v7 q0 8.5 -8 11 q-8 -2.5 -8 -11 Z"/><path d="M12 14 q2 -1.6 4 0M18 14 q2 -1.6 4 0" stroke-width="1.3"/><path d="M13 19.5 q3 2.4 6 0" stroke-width="1.3"/></svg><h4>Illusion</h4><div class="gloss">shaping appearance</div><p>Interface generation, visualization, rendering.</p></div>
-        <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 c3 5 6 7 6 12 a6 6 0 0 1 -12 0 c0 -3 1 -5 3 -7 c0 2 1 3 2 4 c1 -4 0 -7 1 -9 Z"/><path d="M16 16 c1.4 2 2 3 2 4.6 a2 2 0 0 1 -4 0 c0 -1.6 .6 -2.6 2 -4.6 Z" stroke-width="1.2"/></svg><h4>Destruction</h4><div class="gloss">unmaking what exists</div><p>Deletion, rollback, decommissioning — the one power you can't always grant back.</p></div>
+        <div class="spell reveal d3"><svg class="spell-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 c3 5 6 7 6 12 a6 6 0 0 1 -12 0 c0 -3 1 -5 3 -7 c0 2 1 3 2 4 c1 -4 0 -7 1 -9 Z"/><path d="M16 16 c1.4 2 2 3 2 4.6 a2 2 0 0 1 -4 0 c0 -1.6 .6 -2.6 2 -4.6 Z" stroke-width="1.2"/></svg><h4>Destruction</h4><div class="gloss">unmaking what exists</div><p>Deletion, rollback, decommissioning. The one power you can't always grant back.</p></div>
       </div>
     </div>
     <div class="magic-cluster reveal">
@@ -742,15 +742,15 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter VII</div>
     <h2 class="reveal">No real agent is a single school. Each one is a <em>recipe</em>.</h2>
-    <p class="lede reveal">Naming that recipe is a creative act, not a lookup. There's no canonical spell-list for "an inbox agent" — you're deciding which powers this particular being should hold, and which it shouldn't. And each agent begins as one of the five beings from the ladder: its <em>rung</em> sets how freely it acts, the <em>powers</em> set what it can act on. The old stories help twice over — as a guide to what each power does, and as wisdom about the risks of great power.</p>
+    <p class="lede reveal">Naming that recipe is a creative act, not a lookup. There's no canonical spell-list for "an inbox agent." You're deciding which powers this particular being should hold, and which it shouldn't. Each agent begins as one of the five beings from the ladder: its <em>rung</em> sets how freely it acts, its <em>powers</em> set what it can act on. The old stories help twice over: as a guide to what each power does, and as wisdom about the risks of great power.</p>
   </div>
   <div class="compounds">
     <div class="compound reveal">
       <div class="ctitle"><span class="who">The inbox agent</span><span class="rung">the Angel · rung 3</span></div>
       <div class="breakdown">
         <div><b>Divination</b>Reads the flow of incoming mail and senses what matters before you ask.</div>
-        <div><b>Chronomancy</b>Orders your time — what's urgent, what can wait, what to surface and when.</div>
-        <div><b>Teleportation</b>Moves messages where they belong — routing, filing, forwarding.</div>
+        <div><b>Chronomancy</b>Orders your time: what's urgent, what can wait, what to surface and when.</div>
+        <div><b>Teleportation</b>Moves messages where they belong: routing, filing, forwarding.</div>
       </div>
       <p class="note reveal">Notice what it's <em>not</em> granted: no Conjuration, no Dominion. It can sort and route, but it shouldn't be writing and sending in your name unwatched. Mythology is full of messengers who took one liberty too many.</p>
     </div>
@@ -761,20 +761,20 @@
         <div><b>Summoning</b>Calls up sub-agents to chase several threads at once.</div>
         <div><b>Transmutation</b>Renders what it gathers into a brief you can actually use.</div>
       </div>
-      <p class="note reveal">Summoning is the power to make more beings — the one that makes all the others recursive. Granted lightly, one assistant quietly becomes a crowd. Nearly every tradition that let its creations create again kept a story about it getting away from them.</p>
+      <p class="note reveal">Summoning is the power to make more beings, the one that makes all the others recursive. Granted lightly, one assistant quietly becomes a crowd. Nearly every tradition that let its creations create again kept a story about it getting away from them.</p>
     </div>
     <div class="compound reveal">
       <div class="ctitle"><span class="who">The design copilot</span><span class="rung">the Familiar · rung 2</span></div>
       <div class="breakdown">
-        <div><b>Transmutation</b>Reworks an idea from one form to another — words to layout, sketch to spec.</div>
-        <div><b>Illusion</b>Shapes appearance — mockups, visualizations, the look of a thing.</div>
-        <div><b>Conjuration</b>Makes new artifacts from nothing — components, drafts, code.</div>
+        <div><b>Transmutation</b>Reworks an idea from one form to another: words to layout, sketch to spec.</div>
+        <div><b>Illusion</b>Shapes appearance: mockups, visualizations, the look of a thing.</div>
+        <div><b>Conjuration</b>Makes new artifacts from nothing: components, drafts, code.</div>
       </div>
-      <p class="note reveal">Three making-powers and nothing that perceives or governs. A prolific maker with no Oracle beside it will produce the wrong thing, beautifully and at speed. Pair it with someone — or something — that decides whether it should.</p>
+      <p class="note reveal">Three making-powers and nothing that perceives or governs. A prolific maker with no Oracle beside it will produce the wrong thing, beautifully and at speed. Pair it with someone, or something, that decides whether it should.</p>
     </div>
   </div>
   <div class="col prose">
-    <p class="reveal">This composing is the creative part of the work, and the unfamiliar part. We don't have a century of practice assembling societies of agents. What we do have is a few thousand years of stories about granting power to beings that aren't us — what they can do with it, and what tends to happen next. Read them as both blueprint and warning.</p>
+    <p class="reveal">This composing is the creative part of the work, and the unfamiliar part. We don't have a century of practice assembling societies of agents. What we do have is a few thousand years of stories about granting power to beings that aren't us: what they can do with it, and what tends to happen next. Read them as both blueprint and warning.</p>
   </div>
 </section>
 
@@ -789,13 +789,13 @@
     <div class="arche-grid">
       <div class="arche reveal">
         <h4>The Oracle</h4><div class="domain">watcher of the horizon</div>
-        <p>Monitors what's coming — markets, trends, threats, openings. Speaks rarely; speaks early.</p>
+        <p>Monitors what's coming: markets, trends, threats, openings. Speaks rarely; speaks early.</p>
         <div class="deity">Example · Enki, the far-seeing deity who warned one man the flood was coming (Mesopotamian)</div>
         <div class="power">Divination · Necromancy</div>
       </div>
       <div class="arche reveal d1">
         <h4>The Messenger</h4><div class="domain">carrier of the word</div>
-        <p>Moves communication where it needs to go — mail, chat, meetings, introductions.</p>
+        <p>Moves communication where it needs to go: mail, chat, meetings, introductions.</p>
         <div class="deity">Example · Iris, rainbow-messenger of the deities (Greek)</div>
         <div class="power">Teleportation · Enchantment</div>
       </div>
@@ -807,13 +807,13 @@
       </div>
       <div class="arche reveal">
         <h4>The Builder</h4><div class="domain">maker of artifacts</div>
-        <p>Forges the things — documents, decks, prototypes, code — that carry ideas into the world.</p>
+        <p>Forges the things that carry ideas into the world: documents, decks, prototypes, code.</p>
         <div class="deity">Example · Hephaestus, smith and maker to the deities (Greek)</div>
         <div class="power">Conjuration · Illusion</div>
       </div>
       <div class="arche reveal d1">
         <h4>The Steward</h4><div class="domain">tender of the hearth</div>
-        <p>Manages the scarce things — time, attention, budget — so nothing burns down or burns out.</p>
+        <p>Manages the scarce things (time, attention, budget) so nothing burns down or burns out.</p>
         <div class="deity">Example · Hestia, keeper of the hearth-fire (Greek)</div>
         <div class="power">Chronomancy</div>
       </div>
@@ -832,15 +832,15 @@
   <div class="col prose">
     <div class="eyebrow reveal">Chapter IX</div>
     <h2 class="reveal">Naming the being is half the design. Granting its powers is the other half.</h2>
-    <p class="lede reveal">An Oracle isn't born with every Oracle power. Just because an agent is a Messenger doesn't mean it can send. Identity and capability stay separate — so power gets granted deliberately, one ability at a time.</p>
+    <p class="lede reveal">An Oracle isn't born with every Oracle power. Just because an agent is a Messenger doesn't mean it can send. Identity and capability stay separate, so power gets granted deliberately, one ability at a time.</p>
   </div>
   <div class="plaques">
-    <div class="plaque reveal">"An <i>Oracle</i> with the powers of Sight, Knowledge, and Time."<span class="note">— a market-monitoring agent that searches, remembers, and forecasts</span></div>
-    <div class="plaque reveal d1">"A <i>Messenger</i> with Speech and Movement — but no right to send unsupervised."<span class="note">— a comms agent that drafts and routes, with a human on the seal</span></div>
-    <div class="plaque reveal d2">"A <i>Steward</i> with limited Dominion over calendar and tasks."<span class="note">— an ops agent that governs one small territory, and nothing beyond it</span></div>
+    <div class="plaque reveal">"An <i>Oracle</i> with the powers of Sight, Knowledge, and Time."<span class="note">A market-monitoring agent that searches, remembers, and forecasts.</span></div>
+    <div class="plaque reveal d1">"A <i>Messenger</i> with Speech and Movement, but no right to send unsupervised."<span class="note">A comms agent that drafts and routes, with a human on the seal.</span></div>
+    <div class="plaque reveal d2">"A <i>Steward</i> with limited Dominion over calendar and tasks."<span class="note">An ops agent that governs one small territory, and nothing beyond it.</span></div>
   </div>
   <div class="col prose">
-    <p class="reveal">Anyone who has rolled a character sheet will recognize the move: class first, abilities second. That separation is what makes the whole system composable — and auditable.</p>
+    <p class="reveal">Anyone who has rolled a character sheet will recognize the move: class first, abilities second. That separation is what makes the whole system composable, and auditable.</p>
   </div>
 </section>
 
@@ -870,7 +870,7 @@
     <circle class="pcenter" cx="320" cy="210" r="40"/><text class="center-label" x="320" y="215" text-anchor="middle">YOU</text>
   </svg>
   <div class="col prose">
-    <p class="reveal">Look at that diagram long enough and it stops being software architecture. Who owns what? Where do decision rights sit? What information is shared? What's the escalation path? Operations leaders have asked these questions for decades — about people.</p>
+    <p class="reveal">Look at that diagram long enough and it stops being software architecture. Who owns what? Where do decision rights sit? What information is shared? What's the escalation path? Operations leaders have asked these questions for decades, about people.</p>
   </div>
   <blockquote class="pullquote reveal">The pantheon is organizational design for non-human workers.</blockquote>
 </section>
@@ -892,7 +892,7 @@
       <div class="step reveal">
         <div class="num">2</div>
         <div><h4>Score today's agency levels</h4>
-        <p>For each component, mark where delegated authority actually sits — not where anyone wishes it sat:</p>
+        <p>For each component, mark where delegated authority actually sits, not where anyone wishes it sat:</p>
         <div class="spectrum">
           <span><b>0</b> Human sovereignty</span><span><b>1</b> AI assists</span><span><b>2</b> AI recommends</span><span><b>3</b> Executes with approval</span><span><b>4</b> Executes independently</span><span><b>5</b> Governs the domain</span>
         </div>
@@ -900,37 +900,37 @@
       </div>
       <div class="step reveal">
         <div class="num">3</div>
-        <div><h4>Describe the ideal future state — together</h4>
-        <p>This step belongs to the humans in the system. In a working session, the team names where each component <em>should</em> sit on the spectrum, which powers it needs — divination here, conjuration there, dominion almost nowhere — and which beings should wield them. The shared vocabulary is what makes that conversation possible: anyone can argue about whether the value chain needs an Oracle.</p></div>
+        <div><h4>Describe the ideal future state, together</h4>
+        <p>This step belongs to the humans in the system. In a working session, the team names where each component <em>should</em> sit on the spectrum, which powers it needs (divination here, conjuration there, dominion almost nowhere), and which beings should wield them. The shared vocabulary is what makes that conversation possible: anyone can argue about whether the value chain needs an Oracle.</p></div>
       </div>
       <div class="step reveal">
         <div class="num">4</div>
         <div><h4>Implement the beings</h4>
-        <p>Close the gap between baseline and future state as build work: skills, memories, prototypes, permissions. Each new being gets summoned deliberately — and granted its powers one at a time.</p></div>
+        <p>Close the gap between baseline and future state as build work: skills, memories, prototypes, permissions. Each new being gets summoned deliberately, and granted its powers one at a time.</p></div>
       </div>
     </div>
   </div>
   <div class="col prose">
-    <p class="reveal">Run the first three steps on a real team and you get something like the map below. It's an example, not a template — one design organization after the audit, the scoring, and the future-state session: every component of the operating model placed on the spectrum, the beings already in place marked, and the gaps where a being is still missing.</p>
+    <p class="reveal">Run the first three steps on a real team and you get something like the map below. It's an example, not a template: one design organization after the audit, the scoring, and the future-state session. Every component of the operating model is placed on the spectrum, the beings already in place are marked, and the gaps show where a being is still missing.</p>
   </div>
   <div class="wrap">
     <div class="map reveal">
-      <div class="map-title">The Agency Map — an example: one design organization, mapped</div>
+      <div class="map-title">The Agency Map: one design organization, mapped (an example)</div>
       <div class="map-grid">
         <div class="corner"></div>
         <div class="mhead">0<br>Human</div><div class="mhead">1<br>Assists</div><div class="mhead">2<br>Recommends</div><div class="mhead">3<br>Approval</div><div class="mhead">4<br>Independent</div><div class="mhead">5<br>Governs</div>
         <div class="mrow">Suppliers</div>
-        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Oracle — watcher of the horizon; sees what's coming: markets, trends, risks, openings."><span class="tip" aria-hidden="true"><b>Oracle</b>Watcher of the horizon — sees what's coming: markets, trends, risks, openings.</span>O</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Oracle, watcher of the horizon. Sees what's coming: markets, trends, risks, openings."><span class="tip" aria-hidden="true"><b>Oracle</b>Watcher of the horizon. Sees what's coming: markets, trends, risks, openings.</span>O</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Locations</div>
-        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Steward — tender of the scarce things: time, attention, budget."><span class="tip" aria-hidden="true"><b>Steward</b>Tender of the scarce things — time, attention, budget, so nothing burns out.</span>S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Steward, tender of the scarce things: time, attention, budget."><span class="tip" aria-hidden="true"><b>Steward</b>Tender of the scarce things: time, attention, budget, so nothing burns out.</span>S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Value delivery chain</div>
-        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Builder — maker of artifacts: documents, decks, prototypes, code."><span class="tip" aria-hidden="true"><b>Builder</b>Maker of artifacts — documents, decks, prototypes, code.</span>B</div></div><div class="cell"><div class="being missing" tabindex="0" aria-label="A missing being — room to extend agency on the value delivery chain that no agent fills yet."><span class="tip" aria-hidden="true"><b>A missing being</b>Room to extend agency here that no agent fills yet — a candidate to summon next.</span>?</div></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Builder, maker of artifacts: documents, decks, prototypes, code."><span class="tip" aria-hidden="true"><b>Builder</b>Maker of artifacts: documents, decks, prototypes, code.</span>B</div></div><div class="cell"><div class="being missing" tabindex="0" aria-label="A missing being: room to extend agency on the value delivery chain that no agent fills yet."><span class="tip" aria-hidden="true"><b>A missing being</b>Room to extend agency here that no agent fills yet, a candidate to summon next.</span>?</div></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Org structure</div>
-        <div class="cell fill"><div class="being" tabindex="0" aria-label="Human-led — no agent here yet; a person still owns this."><span class="tip" aria-hidden="true"><b>Human-led</b>No agent here yet — a person still owns this.</span>H</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell fill"><div class="being" tabindex="0" aria-label="Human-led: no agent here yet; a person still owns this."><span class="tip" aria-hidden="true"><b>Human-led</b>No agent here yet; a person still owns this.</span>H</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
         <div class="mrow">Information systems</div>
-        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Archivist — keeper of what's known; holds memory and returns it on cue."><span class="tip" aria-hidden="true"><b>Archivist</b>Keeper of what's known — holds memory and returns it the moment it's needed.</span>A</div></div><div class="cell"><div class="being" tabindex="0" aria-label="Messenger — carrier of the word; moves communication where it needs to go."><span class="tip" aria-hidden="true"><b>Messenger</b>Carrier of the word — moves communication where it needs to go.</span>M</div></div><div class="cell"></div>
+        <div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Archivist, keeper of what's known; holds memory and returns it on cue."><span class="tip" aria-hidden="true"><b>Archivist</b>Keeper of what's known. Holds memory and returns it the moment it's needed.</span>A</div></div><div class="cell"><div class="being" tabindex="0" aria-label="Messenger, carrier of the word; moves communication where it needs to go."><span class="tip" aria-hidden="true"><b>Messenger</b>Carrier of the word. Moves communication where it needs to go.</span>M</div></div><div class="cell"></div>
         <div class="mrow">Management systems</div>
-        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Steward — tender of the scarce things: time, attention, budget."><span class="tip" aria-hidden="true"><b>Steward</b>Tender of the scarce things — time, attention, budget, so nothing burns out.</span>S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="being missing" tabindex="0" aria-label="A missing Governor — no agent holds decision rights over the portfolio yet."><span class="tip" aria-hidden="true"><b>A missing Governor</b>No agent holds decision rights over the portfolio yet — what to prioritize, fund, or drop.</span>?</div></div>
+        <div class="cell fill"></div><div class="cell fill"><div class="being" tabindex="0" aria-label="Steward, tender of the scarce things: time, attention, budget."><span class="tip" aria-hidden="true"><b>Steward</b>Tender of the scarce things: time, attention, budget, so nothing burns out.</span>S</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="being missing" tabindex="0" aria-label="A missing Governor: no agent holds decision rights over the portfolio yet."><span class="tip" aria-hidden="true"><b>A missing Governor</b>No agent holds decision rights over the portfolio yet: what to prioritize, fund, or drop.</span>?</div></div>
       </div>
       <div class="map-legend">
         <span><span class="key"></span> Being in place</span>
@@ -940,15 +940,15 @@
       <div class="map-key"><b>O</b> Oracle · <b>M</b> Messenger · <b>A</b> Archivist · <b>B</b> Builder · <b>S</b> Steward · <b>H</b> human-led (no agent yet). Hover or focus any marker for what it does.</div>
     </div>
     <div class="col prose">
-      <p class="reveal" style="text-align:center; margin:0 auto;">Read across the rows and three things stand out. Each describes the <em>AI layer</em> — what's been handed to agents and what hasn't — not the people, who may well cover these gaps off-map:</p>
+      <p class="reveal" style="text-align:center; margin:0 auto;">Read across the rows and three things stand out. Each describes the <em>AI layer</em> (what's been handed to agents and what hasn't), not the people, who may well cover these gaps off-map:</p>
     </div>
     <div class="findings">
-      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, while the only Oracle barely assists on <em>suppliers</em>. In its current state the tooling is good at making things; little of it is yet pointed at watching what's ahead. That watching may still happen — in team members' minds and conversations, not in the system.</span></div>
-      <div class="finding reveal d1">Communications run on their own; research hasn't been handed over.<span class="fnote">On the map: the Messenger handles <em>information systems</em> almost independently, while the looking-ahead work sits with no agent — the Oracle never rises above "assists." Research still gets done; it's just done by hand rather than delegated.</span></div>
-      <div class="finding reveal d2">Portfolio planning has no Governor.<span class="fnote">On the map: <em>management systems</em> show a Steward assisting, but the "Governs" column is empty. No agent yet holds decision rights over the portfolio — what to prioritize, fund, or drop. Those calls still sit with people; the system simply doesn't represent them.</span></div>
+      <div class="finding reveal">Strong Builders, weak Oracles.<span class="fnote">On the map: a Builder owns the <em>value delivery chain</em>, while the only Oracle barely assists on <em>suppliers</em>. In its current state the tooling is good at making things; little of it is yet pointed at watching what's ahead. That watching may still happen, in team members' minds and conversations, not in the system.</span></div>
+      <div class="finding reveal d1">Communications run on their own; research hasn't been handed over.<span class="fnote">On the map: the Messenger handles <em>information systems</em> almost independently, while the looking-ahead work sits with no agent. The Oracle never rises above "assists." Research still gets done, just by hand rather than delegated.</span></div>
+      <div class="finding reveal d2">Portfolio planning has no Governor.<span class="fnote">On the map: <em>management systems</em> show a Steward assisting, but the "Governs" column is empty. No agent yet holds decision rights over the portfolio: what to prioritize, fund, or drop. Those calls still sit with people; the system simply doesn't represent them.</span></div>
     </div>
     <div class="col prose">
-      <p class="reveal">One view shows where agency exists, where it's missing, where humans remain essential — and where the next being should be summoned. Most AI conversations start with "what agents should we build?" The better question is the one an operations leader would ask: <strong>how should the operating model evolve when agency becomes distributable?</strong></p>
+      <p class="reveal">One view shows where agency exists, where it's missing, where humans remain essential, and where the next being should be summoned. Most AI conversations start with "what agents should we build?" The better question is the one an operations leader would ask: <strong>how should the operating model evolve when agency becomes distributable?</strong></p>
     </div>
   </div>
 </section>
@@ -958,9 +958,9 @@
   <div class="col prose" style="text-align:left">
     <div class="eyebrow reveal">Chapter XII</div>
     <h2 class="reveal">The powers we choose to grant.</h2>
-    <p class="lede reveal">Four layers, one language: a cosmology, a pantheon, a system of powers, and the governance that holds them. We've now walked all four — from a being that only obeys to one that governs a whole domain.</p>
+    <p class="lede reveal">Four layers, one language: a cosmology, a pantheon, a system of powers, and the governance that holds them. We've now walked all four, from a being that only obeys to one that governs a whole domain.</p>
   </div>
-  <blockquote class="pullquote reveal">The real challenge ahead is less about building intelligent systems than about finding a shared language for reasoning about a <em>society</em> of them — and choosing, deliberately, which powers to grant.</blockquote>
+  <blockquote class="pullquote reveal">The real challenge ahead is less about building intelligent systems than about finding a shared language for reasoning about a <em>society</em> of them, and choosing, deliberately, which powers to grant.</blockquote>
   <p class="footnote reveal">And there's a non-zero chance that all those hours of Dungeons &amp; Dragons were career preparation.</p>
   <div class="colophon reveal"><span class="star">✦</span>Jason Armstrong · The Mythology of Agents · 2026</div>
   <details class="about reveal">
@@ -968,10 +968,10 @@
     <div class="about-body">
       <h4>About this piece</h4>
       <p>This began as notes I was keeping for myself while building with AI agents, and grew into the piece you've just read.</p>
-      <p>Every mythology here — Greek, Norse, Egyptian, Mesopotamian — is one no longer practiced as a living faith. That was deliberate. Folklore named as folklore stays; the "schools of magic" are borrowed openly from tabletop fantasy, which is recent and makes no claim to be ancient or sacred.</p>
+      <p>Every mythology here (Greek, Norse, Egyptian, Mesopotamian) is one no longer practiced as a living faith. That was deliberate. Folklore named as folklore stays; the "schools of magic" are borrowed openly from tabletop fantasy, which is recent and makes no claim to be ancient or sacred.</p>
       <p>I made an effort to check the mythological and historical claims against primary sources and correct what didn't hold up.</p>
-      <p>None of this makes the framework true. It's a v1 creative framework, not a scientific diagnostic — a way to think and talk about systems we don't yet have good words for. If anything here feels wrong, I'd want to hear it: <a href="mailto:designisagoodidea@gmail.com">designisagoodidea@gmail.com</a></p>
-      <p class="sig">— Jason Armstrong</p>
+      <p>None of this makes the framework true. It's a v1 creative framework, not a scientific diagnostic. It's a way to think and talk about systems we don't yet have good words for. If anything here feels wrong, I'd want to hear it: <a href="mailto:designisagoodidea@gmail.com">designisagoodidea@gmail.com</a></p>
+      <p class="sig">Jason Armstrong</p>
     </div>
   </details>
 </section>
